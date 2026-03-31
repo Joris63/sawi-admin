@@ -1,0 +1,306 @@
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+@import "./typography.css";
+@import "./nav.css";
+@import "./styleguide/styleguide.css";
+
+/* Use .dark class for dark mode (matches PrimeVue's darkModeSelector) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Typography, Spacing & Borders ───────────────────────────────────────── */
+@theme {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+
+  --spacing-xs:  0.25rem;  /*  4px — icon gaps, badge padding       */
+  --spacing-sm:  0.5rem;   /*  8px — tight component internals      */
+  --spacing-md:  1rem;     /* 16px — base unit, default spacing      */
+  --spacing-lg:  1.5rem;   /* 24px — card padding, between groups   */
+  --spacing-xl:  2rem;     /* 32px — between sections               */
+  --spacing-2xl: 3rem;     /* 48px — page-level vertical rhythm     */
+  --spacing-3xl: 4rem;     /* 64px — max page padding               */
+
+  --radius-sm:   0.25rem;  /*  4px — tags, tooltips, tiny elements  */
+  --radius-md:   0.5rem;   /*  8px — inputs, small buttons          */
+  --radius-lg:   0.75rem;  /* 12px — buttons, toasts                */
+  --radius-xl:   1rem;     /* 16px — cards, panels, tables          */
+  --radius-2xl:  1.5rem;   /* 24px — modals, large surfaces         */
+  --radius-full: 9999px;   /* pill — badges, avatars, dots          */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   STATIC PALETTE TOKENS
+   Outputs hex values to :root as CSS custom properties.
+   Kept separate from any var() references — mixing them breaks the block.
+───────────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* ─── Primary ─────────────────────────────────────────────────────
+     Hue 192°  |  Brand color #004050 at 900
+     Also set in main.ts definePreset so PrimeVue components match.
+  ─────────────────────────────────────────────────────────────────── */
+  --color-primary-50:  #f3fafc;
+  --color-primary-100: #e1f5fa;
+  --color-primary-200: #bceaf5;
+  --color-primary-300: #7edaf1;
+  --color-primary-400: #34c9ef;
+  --color-primary-500: #0ba5cc;
+  --color-primary-600: #047c9a;
+  --color-primary-700: #055f76;
+  --color-primary-800: #054b5c;
+  --color-primary-900: #004050;
+  --color-primary-950: #002933;
+
+  /* ─── Secondary ───────────────────────────────────────────────────
+     Hue 186°  |  Brand color #53c0cb at 400
+  ─────────────────────────────────────────────────────────────────── */
+  --color-secondary-50:  #f0f9fa;
+  --color-secondary-100: #e1f3f5;
+  --color-secondary-200: #b9e4e9;
+  --color-secondary-300: #8ad3db;
+  --color-secondary-400: #53c0cb;
+  --color-secondary-500: #30a3b0;
+  --color-secondary-600: #217d87;
+  --color-secondary-700: #1b5d65;
+  --color-secondary-800: #143e43;
+  --color-secondary-900: #0d282b;
+  --color-secondary-950: #09191b;
+
+  /* ─── Offer / discount ────────────────────────────────────────────
+     Hue 355°  |  Brand color #e94b57 at 500
+  ─────────────────────────────────────────────────────────────────── */
+  --color-offer-50:  #fdf1f2;
+  --color-offer-100: #fbdadd;
+  --color-offer-200: #f8aab0;
+  --color-offer-300: #f57a84;
+  --color-offer-400: #f4626e;
+  --color-offer-500: #e94b57;
+  --color-offer-600: #d91c2c;
+  --color-offer-700: #a41924;
+  --color-offer-800: #75151d;
+  --color-offer-900: #4c1015;
+  --color-offer-950: #2d0b0e;
+
+  /* ─── Surface ─────────────────────────────────────────────────────
+     Hue 192°, low saturation  |  Tonal neutrals for bg/text/borders.
+     Overrides tailwindcss-primeui's --color-surface-* mapping with
+     our custom teal-tinted scale.
+  ─────────────────────────────────────────────────────────────────── */
+  --color-surface-50:  #f6f8f9;
+  --color-surface-100: #edf2f2;
+  --color-surface-200: #dbe5e6;
+  --color-surface-300: #bcd0d2;
+  --color-surface-400: #85a9ad;
+  --color-surface-500: #578489;
+  --color-surface-600: #3c5a5d;
+  --color-surface-700: #26393b;
+  --color-surface-800: #182425;
+  --color-surface-900: #101819;
+  --color-surface-950: #0a0f10;
+
+  /* ─── Danger ──────────────────────────────────────────────────────
+     Hue 0°  |  Errors, destructive actions
+  ─────────────────────────────────────────────────────────────────── */
+  --color-danger-50:  #fff1f1;
+  --color-danger-100: #ffe0e0;
+  --color-danger-200: #ffc5c5;
+  --color-danger-300: #ff9d9d;
+  --color-danger-400: #ff6464;
+  --color-danger-500: #f83535;
+  --color-danger-600: #e51414;
+  --color-danger-700: #c10d0d;
+  --color-danger-800: #a00f0f;
+  --color-danger-900: #841414;
+  --color-danger-950: #480505;
+
+  /* ─── Warning ─────────────────────────────────────────────────────
+     Hue 38°  |  Caution, non-blocking alerts
+  ─────────────────────────────────────────────────────────────────── */
+  --color-warning-50:  #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-warning-950: #451a03;
+
+  /* ─── Info ────────────────────────────────────────────────────────
+     Hue 210°  |  Informational, neutral feedback
+  ─────────────────────────────────────────────────────────────────── */
+  --color-info-50:  #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-200: #bfdbfe;
+  --color-info-300: #93c5fd;
+  --color-info-400: #60a5fa;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --color-info-700: #1d4ed8;
+  --color-info-800: #1e40af;
+  --color-info-900: #1e3a8a;
+  --color-info-950: #172554;
+
+  /* ─── Success ─────────────────────────────────────────────────────
+     Hue 142°  |  Confirmations, completed states
+  ─────────────────────────────────────────────────────────────────── */
+  --color-success-50:  #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+  --color-success-950: #052e16;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DYNAMIC SEMANTIC TOKENS
+   Uses @theme inline so utilities reference runtime CSS variables — these
+   flip automatically when .dark is toggled. Kept in a separate block from
+   the static palette tokens above.
+───────────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-background:       var(--background);
+  --color-foreground:       var(--foreground);
+  --color-card:             var(--card);
+  --color-card-foreground:  var(--card-foreground);
+  --color-muted:            var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border:           var(--border);
+  --color-border-strong:    var(--border-strong);
+  --color-input:            var(--input);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PALETTE CSS VARIABLES — forced into :root so inline var() references always
+   resolve. Tailwind v4 tree-shakes @theme variables that have no matching
+   utility class in the templates, so we duplicate them here.
+───────────────────────────────────────────────────────────────────────────── */
+:root {
+  --color-primary-50:  #f3fafc;
+  --color-primary-100: #e1f5fa;
+  --color-primary-200: #bceaf5;
+  --color-primary-300: #7edaf1;
+  --color-primary-400: #34c9ef;
+  --color-primary-500: #0ba5cc;
+  --color-primary-600: #047c9a;
+  --color-primary-700: #055f76;
+  --color-primary-800: #054b5c;
+  --color-primary-900: #004050;
+  --color-primary-950: #002933;
+
+  --color-secondary-50:  #f0f9fa;
+  --color-secondary-100: #e1f3f5;
+  --color-secondary-200: #b9e4e9;
+  --color-secondary-300: #8ad3db;
+  --color-secondary-400: #53c0cb;
+  --color-secondary-500: #30a3b0;
+  --color-secondary-600: #217d87;
+  --color-secondary-700: #1b5d65;
+  --color-secondary-800: #143e43;
+  --color-secondary-900: #0d282b;
+  --color-secondary-950: #09191b;
+
+  --color-offer-50:  #fdf1f2;
+  --color-offer-100: #fbdadd;
+  --color-offer-200: #f8aab0;
+  --color-offer-300: #f57a84;
+  --color-offer-400: #f4626e;
+  --color-offer-500: #e94b57;
+  --color-offer-600: #d91c2c;
+  --color-offer-700: #a41924;
+  --color-offer-800: #75151d;
+  --color-offer-900: #4c1015;
+  --color-offer-950: #2d0b0e;
+
+  --color-surface-50:  #f6f8f9;
+  --color-surface-100: #edf2f2;
+  --color-surface-200: #dbe5e6;
+  --color-surface-300: #bcd0d2;
+  --color-surface-400: #85a9ad;
+  --color-surface-500: #578489;
+  --color-surface-600: #3c5a5d;
+  --color-surface-700: #26393b;
+  --color-surface-800: #182425;
+  --color-surface-900: #101819;
+  --color-surface-950: #0a0f10;
+
+  --color-danger-50:  #fff1f1;
+  --color-danger-100: #ffe0e0;
+  --color-danger-200: #ffc5c5;
+  --color-danger-300: #ff9d9d;
+  --color-danger-400: #ff6464;
+  --color-danger-500: #f83535;
+  --color-danger-600: #e51414;
+  --color-danger-700: #c10d0d;
+  --color-danger-800: #a00f0f;
+  --color-danger-900: #841414;
+  --color-danger-950: #480505;
+
+  --color-warning-50:  #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-warning-950: #451a03;
+
+  --color-info-50:  #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-200: #bfdbfe;
+  --color-info-300: #93c5fd;
+  --color-info-400: #60a5fa;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --color-info-700: #1d4ed8;
+  --color-info-800: #1e40af;
+  --color-info-900: #1e3a8a;
+  --color-info-950: #172554;
+
+  --color-success-50:  #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+  --color-success-950: #052e16;
+}
+
+/* ─── Light mode ──────────────────────────────────────────────────────────── */
+:root {
+  --background:       var(--color-surface-50);   /* page bg              */
+  --foreground:       var(--color-surface-900);  /* body text            */
+  --card:             #ffffff;                   /* cards / panels       */
+  --card-foreground:  var(--color-surface-900);  /* text on cards        */
+  --muted:            var(--color-surface-100);  /* subtle bg            */
+  --muted-foreground: var(--color-surface-500);  /* secondary text       */
+  --border:           var(--color-surface-200);  /* default borders      */
+  --border-strong:    var(--color-surface-300);  /* emphasized borders   */
+  --input:            var(--color-surface-200);  /* input borders        */
+}
+
+/* ─── Dark mode ───────────────────────────────────────────────────────────── */
+.dark {
+  --background:       var(--color-surface-950);  /* page bg              */
+  --foreground:       var(--color-surface-50);   /* body text            */
+  --card:             var(--color-surface-900);  /* cards / panels       */
+  --card-foreground:  var(--color-surface-50);   /* text on cards        */
+  --muted:            var(--color-surface-800);  /* subtle bg            */
+  --muted-foreground: var(--color-surface-400);  /* secondary text       */
+  --border:           var(--color-surface-700);  /* default borders      */
+  --border-strong:    var(--color-surface-600);  /* emphasized borders   */
+  --input:            var(--color-surface-700);  /* input borders        */
+}

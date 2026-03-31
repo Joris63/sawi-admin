@@ -1,0 +1,55 @@
+/* ── Borders section ──────────────────────────────────────────────────────── */
+
+.borders-intro       { @apply mt-2; }
+.borders-divider     { @apply border-border; }
+.borders-section-desc { @apply mt-1 mb-6; }
+.borders-code        { @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em]; }
+
+/* Radius scale */
+.radius-scale { @apply space-y-3; }
+
+.radius-row {
+  @apply flex items-center gap-6 px-5 py-3 bg-card rounded-xl border border-border;
+}
+
+.radius-meta   { @apply flex flex-col gap-0.5 w-40 shrink-0; }
+.radius-token  { @apply text-xs font-mono font-medium text-primary-700 dark:text-primary-300; }
+.radius-detail { @apply text-[11px] text-muted-foreground; }
+.radius-usage  { @apply text-[11px] text-muted-foreground flex-1; }
+
+.radius-demo {
+  @apply w-14 h-14 bg-primary-100 dark:bg-primary-950 border-2 border-primary-300 dark:border-primary-700 shrink-0;
+}
+
+/* Width scale */
+.width-scale { @apply space-y-3; }
+
+.width-row {
+  @apply flex items-center gap-6 px-5 py-3 bg-card rounded-xl border border-border;
+}
+
+.width-meta   { @apply flex flex-col gap-0.5 w-40 shrink-0; }
+.width-token  { @apply text-xs font-mono font-medium text-primary-700 dark:text-primary-300; }
+.width-detail { @apply text-[11px] text-muted-foreground; }
+.width-usage  { @apply text-[11px] text-muted-foreground flex-1; }
+
+.width-demo {
+  @apply w-14 h-14 rounded-lg border-border bg-primary-100 dark:bg-primary-950;
+}
+
+/* Color reference */
+.border-color-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-3;
+}
+
+.border-color-row {
+  @apply flex items-center gap-4 px-4 py-3 bg-card rounded-xl border border-border;
+}
+
+.border-color-demo {
+  @apply w-12 h-12 rounded-lg bg-muted shrink-0;
+}
+
+.border-color-meta { @apply flex flex-col gap-0.5; }
+.border-color-name { @apply text-xs font-mono font-medium text-primary-700 dark:text-primary-300; }
+.border-color-desc { @apply text-[11px] text-muted-foreground; }

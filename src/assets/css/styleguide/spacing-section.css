@@ -1,0 +1,66 @@
+/* ── Spacing section ──────────────────────────────────────────────────────── */
+
+.spacing-intro       { @apply mt-2; }                           /* sm */
+.spacing-divider     { @apply border-border; }
+.spacing-section-desc { @apply mt-1 mb-6; }                    /* xs, lg */
+.spacing-code        { @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em]; }
+
+/* Token scale */
+.spacing-scale {
+  @apply divide-y divide-border rounded-xl border border-border overflow-hidden;
+}
+
+.spacing-scale-row {
+  @apply grid items-center gap-6 px-5 py-3 bg-card;
+  grid-template-columns: 8rem 1fr 6rem;
+}
+
+.spacing-scale-meta   { @apply flex flex-col gap-0.5; }
+.spacing-scale-token  { @apply text-xs font-mono font-medium text-primary-700 dark:text-primary-300; }
+.spacing-scale-detail { @apply text-[11px] text-muted-foreground; }
+
+.spacing-scale-bar-wrap { @apply flex items-center; }
+.spacing-scale-bar {
+  @apply h-5 rounded bg-primary-400 dark:bg-primary-600;
+  max-width: 100%;
+}
+
+.spacing-scale-example {
+  @apply text-xs font-mono text-muted-foreground text-right;
+}
+
+/* Code block */
+.spacing-code-block {
+  @apply rounded-xl border border-border bg-muted overflow-hidden mb-8;  /* mb = 2xl */
+}
+
+.spacing-pre {
+  @apply p-6 text-sm font-mono text-foreground overflow-x-auto leading-relaxed; /* p = lg */
+}
+
+/* Prefix table */
+.spacing-prefix-table {
+  @apply rounded-xl border border-border overflow-hidden overflow-x-auto;
+}
+
+.spacing-prefix-header,
+.spacing-prefix-row {
+  @apply grid border-b border-border last:border-b-0;
+  grid-template-columns: 6rem 8rem repeat(7, minmax(4rem, 1fr));
+}
+
+.spacing-prefix-header {
+  @apply bg-muted px-4 py-2;
+}
+
+.spacing-prefix-row {
+  @apply bg-card px-4 py-2 items-center;
+}
+
+.spacing-prefix-name {
+  @apply text-xs font-mono font-medium text-primary-700 dark:text-primary-300;
+}
+
+.spacing-prefix-cell {
+  @apply font-mono;
+}

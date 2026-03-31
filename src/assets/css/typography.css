@@ -1,0 +1,40 @@
+/* ── Type scale ───────────────────────────────────────────────────────────── */
+
+.app-h1 {
+  @apply text-[1.75rem] font-bold tracking-tight leading-tight text-foreground;
+}
+
+.app-h2 {
+  @apply text-2xl font-bold leading-tight text-foreground;
+}
+
+.app-h3 {
+  @apply text-xl font-semibold leading-snug text-foreground;
+}
+
+.app-h4 {
+  @apply text-base font-semibold text-foreground;
+}
+
+.app-body {
+  @apply text-base font-normal leading-relaxed text-foreground;
+}
+
+.app-small {
+  @apply text-sm font-normal leading-relaxed text-foreground;
+}
+
+.app-caption {
+  @apply text-xs font-medium text-muted-foreground;
+}
+
+/* Muted colour variant — applied when the `muted` prop is set */
+.app-h1.is-muted,
+.app-h2.is-muted,
+.app-h3.is-muted,
+.app-h4.is-muted,
+.app-body.is-muted,
+.app-small.is-muted,
+.app-caption.is-muted {
+  @apply text-muted-foreground;
+}

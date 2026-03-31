@@ -1,0 +1,100 @@
+/* ── Colors section ───────────────────────────────────────────────────────── */
+
+/* Header */
+.colors-intro   { @apply mt-2; }
+.colors-divider { @apply border-border; }
+
+/* Palette groups */
+.palette-groups     { @apply space-y-14; }
+.palette-group-desc { @apply mt-1 mb-6; }
+
+/* Responsive grid column helpers (shared by palette + class-ref grids) */
+.grid--2 { @apply grid-cols-1 sm:grid-cols-2; }
+.grid--3 { @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3; }
+.grid--4 { @apply grid-cols-2 lg:grid-cols-4; }
+
+/* Palette card */
+.palette-grid { @apply grid gap-5; }
+
+.palette-hero    { @apply w-full rounded-t-xl; }
+.palette-hero-lg { @apply h-28; }
+.palette-hero-sm { @apply h-20; }
+
+.palette-strip       { @apply flex rounded-b-xl overflow-hidden; }
+.palette-strip-swatch { @apply relative flex-1 h-6 cursor-default; }
+
+/* Tooltip — hidden by default, shown on swatch hover via CSS */
+.palette-tooltip {
+  @apply absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 hidden flex-col items-center pointer-events-none z-10;
+}
+.palette-strip-swatch:hover .palette-tooltip {
+  display: flex;
+}
+.palette-tooltip-label {
+  @apply bg-foreground text-background text-[9px] font-mono rounded px-1.5 py-1 whitespace-nowrap shadow-md;
+}
+.palette-tooltip-arrow {
+  @apply w-1.5 h-1.5 bg-foreground rotate-45 -mt-1;
+}
+
+/* Base swatch marker */
+.palette-strip-swatch--base {
+  @apply relative;
+}
+.palette-strip-swatch--base::after {
+  content: '';
+  @apply absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white/70;
+}
+
+/* Palette label row */
+.palette-label       { @apply mt-2.5 flex items-center justify-between gap-2; }
+.palette-label-name  { @apply text-sm font-medium text-foreground; }
+.palette-label-right { @apply flex items-center gap-2; }
+.palette-label-hex   { @apply text-xs font-mono text-muted-foreground; }
+.palette-base-badge  {
+  @apply text-[10px] font-mono px-1.5 py-0.5 rounded bg-muted text-muted-foreground border border-border;
+}
+
+/* ── Usage section ────────────────────────────────────────────────────────── */
+
+.usage-intro { @apply mt-1 mb-8; }
+
+/* Class pattern box */
+.class-pattern         { @apply rounded-xl border border-border overflow-hidden mb-10; }
+.class-pattern-header  { @apply px-4 py-2.5 bg-muted border-b border-border; }
+.class-pattern-label   { @apply text-xs font-semibold text-muted-foreground uppercase tracking-wider; }
+.class-pattern-body    { @apply p-5 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2; }
+.class-pattern-row     { @apply flex items-center gap-2; }
+.class-pattern-code    { @apply text-xs font-mono text-primary-700 dark:text-primary-300; }
+.class-pattern-placeholder { @apply text-xs font-mono text-muted-foreground; }
+.class-pattern-footer  { @apply px-5 pb-4; }
+.class-pattern-footer-text { @apply text-xs text-muted-foreground; }
+
+/* Class reference */
+.class-ref-groups      { @apply space-y-8; }
+.class-ref-group-label { @apply text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-3; }
+.class-ref-grid        { @apply grid gap-4; }
+.class-ref-card        { @apply rounded-xl border border-border overflow-hidden; }
+.class-ref-card-header { @apply px-3 py-2 bg-muted border-b border-border flex items-center gap-2; }
+.class-ref-card-dot    { @apply w-3 h-3 rounded-full shrink-0; }
+.class-ref-card-name   { @apply text-xs font-medium text-foreground; }
+.class-ref-rows        { @apply divide-y divide-border; }
+
+.class-ref-row {
+  @apply flex items-center gap-2 px-3 py-1.5 cursor-pointer transition-colors;
+}
+.class-ref-row:hover   { @apply bg-muted; }
+
+.class-ref-swatch { @apply w-5 h-5 rounded shrink-0 border border-black/5; }
+.class-ref-shade  { @apply text-xs font-mono text-muted-foreground w-8 shrink-0; }
+.class-ref-name   { @apply text-xs font-mono text-foreground flex-1; }
+
+.class-ref-hex       { @apply text-[10px] font-mono text-muted-foreground opacity-0 transition-opacity; }
+.class-ref-copy-icon { @apply w-3 h-3 text-muted-foreground opacity-0 transition-opacity shrink-0; }
+.class-ref-row:hover .class-ref-hex,
+.class-ref-row:hover .class-ref-copy-icon { opacity: 1; }
+
+/* Copy toast */
+.copy-toast {
+  @apply fixed bottom-6 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs font-mono px-4 py-2 rounded-lg shadow-lg pointer-events-none;
+}

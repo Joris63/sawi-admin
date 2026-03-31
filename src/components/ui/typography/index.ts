@@ -1,0 +1,7 @@
+export { default as AppH1 } from './AppH1.vue'
+export { default as AppH2 } from './AppH2.vue'
+export { default as AppH3 } from './AppH3.vue'
+export { default as AppH4 } from './AppH4.vue'
+export { default as AppBody } from './AppBody.vue'
+export { default as AppSmall } from './AppSmall.vue'
+export { default as AppCaption } from './AppCaption.vue'

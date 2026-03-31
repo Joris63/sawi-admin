@@ -1,0 +1,75 @@
+/* ── Typography section ───────────────────────────────────────────────────── */
+
+.typo-intro       { @apply mt-2; }
+.typo-divider     { @apply border-border; }
+.typo-section-title { @apply mb-1; }
+.typo-section-desc  { @apply mt-1 mb-6; }
+
+.typo-code {
+  @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em];
+}
+
+/* Type scale table */
+.typo-scale {
+  @apply divide-y divide-border rounded-xl border border-border overflow-hidden;
+}
+
+.typo-scale-row {
+  @apply grid gap-6 px-5 py-4 items-center bg-card;
+  grid-template-columns: 11rem 1fr;
+}
+
+.typo-scale-meta {
+  @apply flex flex-col gap-0.5 shrink-0;
+}
+
+.typo-scale-component {
+  @apply text-xs font-mono font-medium text-primary-700 dark:text-primary-300;
+}
+
+.typo-scale-detail {
+  @apply text-[11px] text-muted-foreground;
+}
+
+.typo-scale-sample {
+  @apply min-w-0;
+}
+
+/* Muted demo */
+.typo-muted-demo {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 rounded-xl border border-border bg-card;
+}
+
+/* Weights */
+.typo-weights {
+  @apply divide-y divide-border rounded-xl border border-border overflow-hidden;
+}
+
+.typo-weight-row {
+  @apply flex items-center gap-6 px-5 py-3 bg-card;
+}
+
+.typo-weight-label {
+  @apply w-36 shrink-0;
+}
+
+.typo-weight-sample {
+  @apply text-xl text-foreground;
+}
+
+/* Monospace */
+.typo-mono-demo {
+  @apply divide-y divide-border rounded-xl border border-border overflow-hidden;
+}
+
+.typo-mono-row {
+  @apply flex items-center gap-6 px-5 py-3 bg-card;
+}
+
+.typo-mono-row .app-caption {
+  @apply w-28 shrink-0;
+}
+
+.typo-mono-value {
+  @apply font-mono text-sm text-foreground;
+}
