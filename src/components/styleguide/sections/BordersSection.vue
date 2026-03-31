@@ -40,14 +40,14 @@ const colorTokens = [
       Gedefinieerd in <code class="borders-code">@theme</code> — gebruik de klasse direct.
     </AppSmall>
 
-    <div class="radius-scale">
-      <div v-for="token in radiusTokens" :key="token.name" class="radius-row">
+    <div class="radius-grid">
+      <div v-for="token in radiusTokens" :key="token.name" class="radius-card">
         <div class="radius-demo" :class="token.class" />
-        <div class="radius-meta">
+        <div class="radius-card-meta">
           <code class="radius-token">{{ token.class }}</code>
           <span class="radius-detail">{{ token.rem }}{{ token.px ? ` · ${token.px}px` : '' }}</span>
+          <span class="radius-usage">{{ token.usage }}</span>
         </div>
-        <AppCaption class="radius-usage">{{ token.usage }}</AppCaption>
       </div>
     </div>
 
@@ -59,14 +59,14 @@ const colorTokens = [
       Gebruik standaard Tailwind border-width utilities. Drie breedtes zijn voldoende voor de interface.
     </AppSmall>
 
-    <div class="width-scale">
-      <div v-for="token in widthTokens" :key="token.class" class="width-row">
+    <div class="width-grid">
+      <div v-for="token in widthTokens" :key="token.class" class="width-card">
         <div class="width-demo" :class="token.class" />
-        <div class="width-meta">
+        <div class="width-card-meta">
           <code class="width-token">{{ token.class }}</code>
           <span class="width-detail">{{ token.px }}px</span>
+          <span class="width-usage">{{ token.usage }}</span>
         </div>
-        <AppCaption class="width-usage">{{ token.usage }}</AppCaption>
       </div>
     </div>
 

@@ -1,41 +1,45 @@
 /* ── Borders section ──────────────────────────────────────────────────────── */
 
-.borders-intro       { @apply mt-2; }
-.borders-divider     { @apply border-border; }
+.borders-intro        { @apply mt-2; }
+.borders-divider      { @apply border-border; }
 .borders-section-desc { @apply mt-1 mb-6; }
-.borders-code        { @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em]; }
+.borders-code         { @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em]; }
 
-/* Radius scale */
-.radius-scale { @apply space-y-3; }
-
-.radius-row {
-  @apply flex items-center gap-6 px-5 py-3 bg-card rounded-xl border border-border;
+/* Radius scale — grid of cards */
+.radius-grid {
+  @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3;
 }
 
-.radius-meta   { @apply flex flex-col gap-0.5 w-40 shrink-0; }
-.radius-token  { @apply text-xs font-mono font-medium text-primary-700 dark:text-primary-300; }
-.radius-detail { @apply text-[11px] text-muted-foreground; }
-.radius-usage  { @apply text-[11px] text-muted-foreground flex-1; }
+.radius-card {
+  @apply flex flex-col gap-3 p-4 bg-card border border-border rounded-xl;
+}
 
 .radius-demo {
-  @apply w-14 h-14 bg-primary-100 dark:bg-primary-950 border-2 border-primary-300 dark:border-primary-700 shrink-0;
+  @apply w-full aspect-square bg-primary-50 dark:bg-primary-950 border-2 border-primary-400 dark:border-primary-600;
 }
+
+.radius-card-meta  { @apply flex flex-col gap-0.5; }
+.radius-token      { @apply text-xs font-mono font-medium text-foreground; }
+.radius-detail     { @apply text-[11px] text-muted-foreground; }
+.radius-usage      { @apply text-[11px] text-muted-foreground leading-snug; }
 
 /* Width scale */
-.width-scale { @apply space-y-3; }
-
-.width-row {
-  @apply flex items-center gap-6 px-5 py-3 bg-card rounded-xl border border-border;
+.width-grid {
+  @apply grid grid-cols-1 sm:grid-cols-3 gap-3;
 }
 
-.width-meta   { @apply flex flex-col gap-0.5 w-40 shrink-0; }
-.width-token  { @apply text-xs font-mono font-medium text-primary-700 dark:text-primary-300; }
-.width-detail { @apply text-[11px] text-muted-foreground; }
-.width-usage  { @apply text-[11px] text-muted-foreground flex-1; }
+.width-card {
+  @apply flex flex-col gap-3 p-4 bg-card border border-border rounded-xl;
+}
 
 .width-demo {
-  @apply w-14 h-14 rounded-lg border-border bg-primary-100 dark:bg-primary-950;
+  @apply h-16 rounded-lg bg-primary-50 dark:bg-primary-950 border-primary-400 dark:border-primary-600;
 }
+
+.width-card-meta { @apply flex flex-col gap-0.5; }
+.width-token     { @apply text-xs font-mono font-medium text-foreground; }
+.width-detail    { @apply text-[11px] text-muted-foreground; }
+.width-usage     { @apply text-[11px] text-muted-foreground leading-snug; }
 
 /* Color reference */
 .border-color-grid {
