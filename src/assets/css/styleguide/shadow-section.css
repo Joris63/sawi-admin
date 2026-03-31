@@ -1,0 +1,23 @@
+/* ── Shadow section ───────────────────────────────────────────────────────── */
+
+.shadow-intro        { @apply mt-2; }
+.shadow-divider      { @apply border-border; }
+.shadow-section-desc { @apply mt-1 mb-6; }
+.shadow-code         { @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em]; }
+
+/* Shadow scale grid */
+.shadow-grid {
+  @apply grid grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+.shadow-card {
+  @apply flex flex-col gap-4;
+}
+
+.shadow-demo {
+  @apply w-full h-28 bg-card rounded-xl;
+}
+
+.shadow-card-meta  { @apply flex flex-col gap-0.5; }
+.shadow-token      { @apply text-xs font-mono font-medium text-foreground; }
+.shadow-usage      { @apply text-[11px] text-muted-foreground leading-snug; }

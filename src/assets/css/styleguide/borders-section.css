@@ -15,7 +15,7 @@
 }
 
 .radius-demo {
-  @apply w-full aspect-square bg-primary-50 dark:bg-primary-950 border-2 border-primary-400 dark:border-primary-600;
+  @apply w-full aspect-square bg-primary-50 dark:bg-primary-950 border border-primary-400 dark:border-primary-600;
 }
 
 .radius-card-meta  { @apply flex flex-col gap-0.5; }

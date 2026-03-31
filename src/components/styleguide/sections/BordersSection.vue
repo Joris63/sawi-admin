@@ -11,9 +11,9 @@ const radiusTokens = [
 ]
 
 const widthTokens = [
-  { class: 'border',   px: 1, usage: 'Standaard randen, dividers, kaarten' },
-  { class: 'border-2', px: 2, usage: 'Actieve states, focus ringen' },
-  { class: 'border-4', px: 4, usage: 'Nadruk, geselecteerde items' },
+  { class: 'border',    px: 1, usage: 'Standaard randen, dividers, kaarten' },
+  { class: 'border-md', px: 2, usage: 'Actieve states, focus ringen' },
+  { class: 'border-lg', px: 4, usage: 'Nadruk, geselecteerde items' },
 ]
 
 const colorTokens = [
@@ -80,7 +80,7 @@ const colorTokens = [
 
     <div class="border-color-grid">
       <div v-for="token in colorTokens" :key="token.class" class="border-color-row">
-        <div class="border-color-demo border-2" :class="token.class" />
+        <div class="border-color-demo border-md" :class="token.class" />
         <div class="border-color-meta">
           <code class="border-color-name">{{ token.class }}</code>
           <AppCaption class="border-color-desc">{{ token.desc }}</AppCaption>

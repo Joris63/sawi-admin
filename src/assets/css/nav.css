@@ -9,7 +9,7 @@
 }
 
 .app-nav-btn {
-  @apply justify-start! gap-2! py-2! pr-4! pl-4.5! rounded-none! border-0! border-l-2! border-l-transparent! text-sm! font-normal! text-foreground!;
+  @apply justify-start! gap-2! py-2! pr-4! pl-4.5! rounded-none! border-0! border-l! border-l-transparent! text-sm! font-normal! text-foreground!;
   border-left-style: solid !important;
 }
 

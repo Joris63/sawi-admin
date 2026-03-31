@@ -7,7 +7,7 @@
 /* Use .dark class for dark mode (matches PrimeVue's darkModeSelector) */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ── Typography, Spacing & Borders ───────────────────────────────────────── */
+/* ── Typography, Spacing, Borders & Shadows ──────────────────────────────── */
 @theme {
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;
@@ -26,7 +26,16 @@
   --radius-xl:   1rem;     /* 16px — cards, panels, tables          */
   --radius-2xl:  1.5rem;   /* 24px — modals, large surfaces         */
   --radius-full: 9999px;   /* pill — badges, avatars, dots          */
+
+  --border-width-md: 2px;  /* actieve states, focus ringen         */
+  --border-width-lg: 4px;  /* nadruk, geselecteerde items          */
+
+  --shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md:  0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
+  --shadow-lg:  0 4px 12px -2px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-xl:  0 10px 24px -4px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.08);
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────────
    STATIC PALETTE TOKENS
@@ -304,3 +313,11 @@
   --border-strong:    var(--color-surface-600);  /* emphasized borders   */
   --input:            var(--color-surface-700);  /* input borders        */
 }
+
+/* ─── Dark mode shadow overrides ─────────────────────────────────────────── */
+/* Tailwind compiles shadow values statically, so we override box-shadow     */
+/* directly. Dark bg needs higher opacity to make elevation visible.         */
+.dark .shadow-sm { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4); }
+.dark .shadow-md { box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.5), 0 1px 3px -1px rgb(0 0 0 / 0.4); }
+.dark .shadow-lg { box-shadow: 0 6px 18px -2px rgb(0 0 0 / 0.6), 0 3px 6px -2px rgb(0 0 0 / 0.4); }
+.dark .shadow-xl { box-shadow: 0 14px 32px -4px rgb(0 0 0 / 0.7), 0 6px 12px -4px rgb(0 0 0 / 0.5); }
