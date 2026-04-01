@@ -1,0 +1,86 @@
+/* ── Buttons section ───────────────────────────────────────────────────────── */
+
+:root {
+  --buttons-matrix-label-w: 7rem;
+}
+
+.buttons-intro {
+  @apply mt-sm;
+}
+.buttons-divider {
+  @apply border-border -mx-md sm:-mx-xl lg:-mx-2xl;
+}
+.buttons-section-desc {
+  @apply mt-xs mb-lg;
+}
+.buttons-code {
+  @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em];
+}
+
+.buttons-row {
+  @apply flex flex-wrap items-center gap-sm;
+}
+.buttons-row--baseline {
+  @apply items-end;
+}
+
+/* Matrix */
+.buttons-matrix {
+  @apply flex flex-col border border-border rounded-xl overflow-hidden;
+}
+.buttons-matrix-header {
+  @apply grid border-b border-border bg-muted px-md py-sm;
+  grid-template-columns: var(--buttons-matrix-label-w) repeat(3, 1fr);
+}
+.buttons-matrix-col-label {
+  @apply font-medium capitalize;
+}
+.buttons-matrix-row {
+  @apply grid items-center border-b border-border last:border-b-0 bg-card px-md py-md gap-sm;
+  grid-template-columns: var(--buttons-matrix-label-w) repeat(3, 1fr);
+}
+.buttons-matrix-row-label {
+  @apply font-medium;
+}
+.buttons-matrix-cell {
+  @apply flex;
+}
+
+/* ── Props table ────────────────────────────────────────────────────────────── */
+
+.props-table-wrap {
+  @apply border border-border rounded-xl overflow-hidden;
+}
+
+.props-table {
+  @apply w-full text-sm border-collapse;
+}
+
+.props-th {
+  @apply text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide
+         bg-muted px-md py-sm border-b border-border;
+}
+
+.props-tr {
+  @apply border-b border-border last:border-b-0;
+}
+
+.props-td {
+  @apply px-md py-sm align-top;
+}
+
+.props-name {
+  @apply font-mono text-primary-700 dark:text-primary-300 text-xs;
+}
+.props-type {
+  @apply font-mono text-foreground text-xs bg-muted px-xs py-[1px] rounded;
+}
+.props-default {
+  @apply font-mono text-muted-foreground text-xs;
+}
+.props-empty {
+  @apply text-muted-foreground;
+}
+.props-desc {
+  @apply text-foreground/80;
+}

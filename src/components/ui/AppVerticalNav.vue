@@ -40,7 +40,11 @@ const emit = defineEmits<{
           >
             <i
               v-if="item.icon"
-              :class="[item.icon, 'app-nav-icon', activeId === item.id ? 'app-nav-icon--active' : '']"
+              :class="[
+                item.icon,
+                'app-nav-icon',
+                activeId === item.id ? 'app-nav-icon--active' : '',
+              ]"
             />
             <span class="app-nav-item-label">{{ item.label }}</span>
           </Button>

@@ -1,9 +1,17 @@
 /* ── Typography section ───────────────────────────────────────────────────── */
 
-.typo-intro       { @apply mt-2; }
-.typo-divider     { @apply border-border; }
-.typo-section-title { @apply mb-1; }
-.typo-section-desc  { @apply mt-1 mb-6; }
+.typo-intro {
+  @apply mt-sm;
+}
+.typo-divider {
+  @apply border-border -mx-md sm:-mx-xl lg:-mx-2xl;
+}
+.typo-section-title {
+  @apply mb-xs;
+}
+.typo-section-desc {
+  @apply mt-xs mb-lg;
+}
 
 .typo-code {
   @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em];
@@ -15,7 +23,7 @@
 }
 
 .typo-scale-row {
-  @apply grid gap-6 px-5 py-4 items-center bg-card;
+  @apply grid gap-lg px-md py-md items-center bg-card;
   grid-template-columns: 11rem 1fr;
 }
 
@@ -37,7 +45,7 @@
 
 /* Muted demo */
 .typo-muted-demo {
-  @apply grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 rounded-xl border border-border bg-card;
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-lg p-lg rounded-xl border border-border bg-card;
 }
 
 /* Weights */
@@ -46,7 +54,7 @@
 }
 
 .typo-weight-row {
-  @apply flex items-center gap-6 px-5 py-3 bg-card;
+  @apply flex items-center gap-lg px-md py-sm bg-card;
 }
 
 .typo-weight-label {
@@ -63,7 +71,7 @@
 }
 
 .typo-mono-row {
-  @apply flex items-center gap-6 px-5 py-3 bg-card;
+  @apply flex items-center gap-lg px-md py-sm bg-card;
 }
 
 .typo-mono-row .app-caption {

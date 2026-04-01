@@ -21,10 +21,10 @@ function toggleDark() {
 
     <Button
       text
-      severity="secondary"
       rounded
       :icon="isDark ? 'pi pi-sun' : 'pi pi-moon'"
       :aria-label="isDark ? 'Lichte modus' : 'Donkere modus'"
+      :pt="{ root: { class: 'sg-topbar-btn' } }"
       @click="toggleDark"
     />
   </header>

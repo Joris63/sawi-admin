@@ -12,7 +12,7 @@ import './assets/css/main.css'
 const AppPreset = definePreset(Aura, {
   semantic: {
     primary: {
-      50:  '#f3fafc',
+      50: '#f3fafc',
       100: '#e1f5fa',
       200: '#bceaf5',
       300: '#7edaf1',
@@ -20,9 +20,9 @@ const AppPreset = definePreset(Aura, {
       500: '#0ba5cc',
       600: '#047c9a',
       700: '#055f76',
-      800: '#054b5c',
-      900: '#004050',
-      950: '#002933',
+      800: '#004050',
+      900: '#003040',
+      950: '#001820',
     },
   },
 })

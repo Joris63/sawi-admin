@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { AppH2, AppH3, AppSmall, AppBody } from '@/components/ui/typography'
+import AppButton from '@/components/ui/AppButton.vue'
+import { useCopy } from '@/composables/useCopy'
 
 const isDark = ref(document.documentElement.classList.contains('dark'))
 const observer = new MutationObserver(() => {
@@ -9,15 +11,11 @@ const observer = new MutationObserver(() => {
 onMounted(() => observer.observe(document.documentElement, { attributeFilter: ['class'] }))
 onUnmounted(() => observer.disconnect())
 
-const copiedClass = ref<string | null>(null)
-let copyTimeout: ReturnType<typeof setTimeout>
+const { copied: copiedClass, copy } = useCopy()
 
-function copy(cls: string) {
-  navigator.clipboard.writeText(cls)
-  copiedClass.value = cls
-  clearTimeout(copyTimeout)
-  copyTimeout = setTimeout(() => (copiedClass.value = null), 1800)
-}
+const prefixes = ['bg', 'text', 'border', 'ring', 'outline', 'shadow', 'fill', 'stroke'] as const
+type Prefix = (typeof prefixes)[number]
+const selectedPrefix = ref<Prefix>('bg')
 
 interface Shade {
   shade: number
@@ -45,18 +43,18 @@ const groups: PaletteGroup[] = [
   {
     label: 'Merkpalet',
     description:
-      'De hoofdkleuren van de interface die de merkidentiteit weerspiegelen. Gebruikt voor primaire acties, links en actieve staten.',
+      'Merkbasis voor acties, links en actieve staten. Primair voor de hoofdactie, Secundair voor ondersteunende acties, Aanbieding voor promotionele highlights.',
     cols: 3,
     items: [
       {
         name: 'Primair',
         key: 'primary',
-        heroShade: 900,
+        heroShade: 800,
         heroHex: '#004050',
-        lightBase: 900,
+        lightBase: 800,
         darkBase: 400,
         shades: [
-          { shade: 50,  hex: '#f3fafc' },
+          { shade: 50, hex: '#f3fafc' },
           { shade: 100, hex: '#e1f5fa' },
           { shade: 200, hex: '#bceaf5' },
           { shade: 300, hex: '#7edaf1' },
@@ -77,7 +75,7 @@ const groups: PaletteGroup[] = [
         lightBase: 400,
         darkBase: 300,
         shades: [
-          { shade: 50,  hex: '#f0f9fa' },
+          { shade: 50, hex: '#f0f9fa' },
           { shade: 100, hex: '#e1f3f5' },
           { shade: 200, hex: '#b9e4e9' },
           { shade: 300, hex: '#8ad3db' },
@@ -98,7 +96,7 @@ const groups: PaletteGroup[] = [
         lightBase: 500,
         darkBase: 400,
         shades: [
-          { shade: 50,  hex: '#fdf1f2' },
+          { shade: 50, hex: '#fdf1f2' },
           { shade: 100, hex: '#fbdadd' },
           { shade: 200, hex: '#f8aab0' },
           { shade: 300, hex: '#f57a84' },
@@ -116,7 +114,7 @@ const groups: PaletteGroup[] = [
   {
     label: 'Oppervlaktepalet',
     description:
-      'Tonale neutralen getint met de primaire tint. Gebruikt voor achtergronden, tekst, randen en alle structurele UI-elementen.',
+      'Primaire tint voor achtergronden, tekst, randen en structurele UI-elementen. Gebruik de lichte tinten voor achtergronden en de donkere voor tekst.',
     cols: 2,
     items: [
       {
@@ -127,7 +125,7 @@ const groups: PaletteGroup[] = [
         lightBase: 700,
         darkBase: 300,
         shades: [
-          { shade: 50,  hex: '#f6f8f9' },
+          { shade: 50, hex: '#f6f8f9' },
           { shade: 100, hex: '#edf2f2' },
           { shade: 200, hex: '#dbe5e6' },
           { shade: 300, hex: '#bcd0d2' },
@@ -144,7 +142,8 @@ const groups: PaletteGroup[] = [
   },
   {
     label: 'Statuspalet',
-    description: 'Semantische kleuren die de toestand en feedback aan de gebruiker overbrengen.',
+    description:
+      'Semantische kleuren voor feedback en toestand. Gebruik altijd de bijbehorende statuskleur — nooit een merkkleur als vervanging.',
     cols: 4,
     items: [
       {
@@ -153,9 +152,9 @@ const groups: PaletteGroup[] = [
         heroShade: 500,
         heroHex: '#f83535',
         lightBase: 500,
-        darkBase: 400,
+        darkBase: 500,
         shades: [
-          { shade: 50,  hex: '#fff1f1' },
+          { shade: 50, hex: '#fff1f1' },
           { shade: 100, hex: '#ffe0e0' },
           { shade: 200, hex: '#ffc5c5' },
           { shade: 300, hex: '#ff9d9d' },
@@ -174,9 +173,9 @@ const groups: PaletteGroup[] = [
         heroShade: 500,
         heroHex: '#f59e0b',
         lightBase: 500,
-        darkBase: 400,
+        darkBase: 500,
         shades: [
-          { shade: 50,  hex: '#fffbeb' },
+          { shade: 50, hex: '#fffbeb' },
           { shade: 100, hex: '#fef3c7' },
           { shade: 200, hex: '#fde68a' },
           { shade: 300, hex: '#fcd34d' },
@@ -195,9 +194,9 @@ const groups: PaletteGroup[] = [
         heroShade: 500,
         heroHex: '#3b82f6',
         lightBase: 500,
-        darkBase: 400,
+        darkBase: 500,
         shades: [
-          { shade: 50,  hex: '#eff6ff' },
+          { shade: 50, hex: '#eff6ff' },
           { shade: 100, hex: '#dbeafe' },
           { shade: 200, hex: '#bfdbfe' },
           { shade: 300, hex: '#93c5fd' },
@@ -216,9 +215,9 @@ const groups: PaletteGroup[] = [
         heroShade: 500,
         heroHex: '#22c55e',
         lightBase: 500,
-        darkBase: 400,
+        darkBase: 500,
         shades: [
-          { shade: 50,  hex: '#f0fdf4' },
+          { shade: 50, hex: '#f0fdf4' },
           { shade: 100, hex: '#dcfce7' },
           { shade: 200, hex: '#bbf7d0' },
           { shade: 300, hex: '#86efac' },
@@ -246,11 +245,23 @@ const colsClass: Record<number, string> = {
   <section id="colors">
     <AppH2>Kleuren</AppH2>
     <AppBody muted class="colors-intro">
-      Tonale kleurenschalen gebaseerd op merktinten. Elk palet loopt van 50 (lichtste) tot 950
-      (donkerste). Beweeg over een tintstrip om de waarden te bekijken.
+      Tonale kleurenschalen gebouwd op merkbasis. Selecteer een prefix en klik op een swatch om de
+      klasse te kopiëren.
     </AppBody>
 
-    <hr class="colors-divider mt-lg mb-xl" />
+    <!-- Prefix switcher -->
+    <div class="prefix-switcher mt-lg">
+      <AppButton
+        v-for="p in prefixes"
+        :key="p"
+        :severity="selectedPrefix === p ? 'primary' : 'ghost'"
+        :variant="selectedPrefix === p ? 'filled' : 'outlined'"
+        size="sm"
+        :label="`${p}-`"
+        class="font-mono"
+        @click="selectedPrefix = p"
+      />
+    </div>
 
     <div class="palette-groups">
       <div v-for="group in groups" :key="group.label">
@@ -261,9 +272,11 @@ const colsClass: Record<number, string> = {
           <div v-for="palette in group.items" :key="palette.key">
             <!-- Hero swatch -->
             <div
-              class="palette-hero"
+              class="palette-hero sg-copyable"
               :class="group.cols === 4 ? 'palette-hero-sm' : 'palette-hero-lg'"
               :style="{ backgroundColor: `var(--color-${palette.key}-${palette.heroShade})` }"
+              :title="`Kopieer ${selectedPrefix}-${palette.key}-${palette.heroShade}`"
+              @click="copy(`${selectedPrefix}-${palette.key}-${palette.heroShade}`)"
             />
 
             <!-- Tonal strip -->
@@ -272,8 +285,14 @@ const colsClass: Record<number, string> = {
                 v-for="{ shade, hex } in palette.shades"
                 :key="shade"
                 class="palette-strip-swatch"
-                :class="shade === (isDark ? palette.darkBase : palette.lightBase) ? 'palette-strip-swatch--base' : ''"
+                :class="
+                  shade === (isDark ? palette.darkBase : palette.lightBase)
+                    ? 'palette-strip-swatch--base'
+                    : ''
+                "
                 :style="{ backgroundColor: `var(--color-${palette.key}-${shade})` }"
+                :title="`Kopieer ${selectedPrefix}-${palette.key}-${shade}`"
+                @click.stop="copy(`${selectedPrefix}-${palette.key}-${shade}`)"
               >
                 <div class="palette-tooltip">
                   <div class="palette-tooltip-label">{{ shade }} · {{ hex }}</div>
@@ -303,7 +322,8 @@ const colsClass: Record<number, string> = {
     <div>
       <AppH3>Kleuren gebruiken</AppH3>
       <AppSmall muted class="usage-intro">
-        Elk palet is beschikbaar als Tailwind-utility. Klik op een klasse om deze te kopiëren.
+        Elke paletkleur is bruikbaar met de onderstaande prefixen. Kies een prefix en klik op een
+        rij om de klasse te kopiëren.
       </AppSmall>
 
       <!-- Class pattern -->
@@ -313,7 +333,16 @@ const colsClass: Record<number, string> = {
         </div>
         <div class="class-pattern-body">
           <div
-            v-for="prefix in ['bg', 'text', 'border', 'ring', 'outline', 'shadow', 'fill', 'stroke']"
+            v-for="prefix in [
+              'bg',
+              'text',
+              'border',
+              'ring',
+              'outline',
+              'shadow',
+              'fill',
+              'stroke',
+            ]"
             :key="prefix"
             class="class-pattern-row"
           >
@@ -323,11 +352,9 @@ const colsClass: Record<number, string> = {
         </div>
         <div class="class-pattern-footer">
           <p class="class-pattern-footer-text">
-            Waarbij <code>palette</code> is
-            <code>primary</code> · <code>secondary</code> · <code>offer</code> ·
-            <code>surface</code> · <code>danger</code> · <code>warning</code> ·
-            <code>info</code> · <code>success</code>
-            — en <code>shade</code> is
+            Waarbij <code>palette</code> is <code>primary</code> · <code>secondary</code> ·
+            <code>offer</code> · <code>surface</code> · <code>danger</code> · <code>warning</code> ·
+            <code>info</code> · <code>success</code> — en <code>shade</code> is
             <code>50 · 100 · 200 · … · 900 · 950</code>
           </p>
         </div>
@@ -351,15 +378,17 @@ const colsClass: Record<number, string> = {
                   v-for="{ shade, hex } in palette.shades"
                   :key="shade"
                   class="class-ref-row"
-                  :title="`Klik om bg-${palette.key}-${shade} te kopiëren`"
-                  @click="copy(`bg-${palette.key}-${shade}`)"
+                  :title="`Klik om ${selectedPrefix}-${palette.key}-${shade} te kopiëren`"
+                  @click="copy(`${selectedPrefix}-${palette.key}-${shade}`)"
                 >
                   <div
                     class="class-ref-swatch"
                     :style="{ backgroundColor: `var(--color-${palette.key}-${shade})` }"
                   />
                   <span class="class-ref-shade">{{ shade }}</span>
-                  <code class="class-ref-name">bg-{{ palette.key }}-{{ shade }}</code>
+                  <code class="class-ref-name"
+                    >{{ selectedPrefix }}-{{ palette.key }}-{{ shade }}</code
+                  >
                   <span class="class-ref-hex">{{ hex }}</span>
                   <svg
                     class="class-ref-copy-icon"
@@ -383,7 +412,7 @@ const colsClass: Record<number, string> = {
 
       <!-- Copy toast -->
       <Transition name="fade-up">
-        <div v-if="copiedClass" class="copy-toast">
+        <div v-if="copiedClass" class="sg-copy-toast">
           Gekopieerd: <span class="font-semibold">{{ copiedClass }}</span>
         </div>
       </Transition>

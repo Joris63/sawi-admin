@@ -1,8 +1,9 @@
-@import "tailwindcss";
-@import "tailwindcss-primeui";
-@import "./typography.css";
-@import "./nav.css";
-@import "./styleguide/styleguide.css";
+@import 'tailwindcss';
+@import 'tailwindcss-primeui';
+@import './typography.css';
+@import './nav.css';
+@import './components/button.css';
+@import './styleguide/styleguide.css';
 
 /* Use .dark class for dark mode (matches PrimeVue's darkModeSelector) */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -12,30 +13,36 @@
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;
 
-  --spacing-xs:  0.25rem;  /*  4px — icon gaps, badge padding       */
-  --spacing-sm:  0.5rem;   /*  8px — tight component internals      */
-  --spacing-md:  1rem;     /* 16px — base unit, default spacing      */
-  --spacing-lg:  1.5rem;   /* 24px — card padding, between groups   */
-  --spacing-xl:  2rem;     /* 32px — between sections               */
-  --spacing-2xl: 3rem;     /* 48px — page-level vertical rhythm     */
-  --spacing-3xl: 4rem;     /* 64px — max page padding               */
+  --spacing-xs: 0.25rem; /*  4px — icon gaps, badge padding       */
+  --spacing-sm: 0.5rem; /*  8px — tight component internals      */
+  --spacing-md: 1rem; /* 16px — base unit, default spacing      */
+  --spacing-lg: 1.5rem; /* 24px — card padding, between groups   */
+  --spacing-xl: 2rem; /* 32px — between sections               */
+  --spacing-2xl: 3rem; /* 48px — page-level vertical rhythm     */
+  --spacing-3xl: 4rem; /* 64px — max page padding               */
 
-  --radius-sm:   0.25rem;  /*  4px — tags, tooltips, tiny elements  */
-  --radius-md:   0.5rem;   /*  8px — inputs, small buttons          */
-  --radius-lg:   0.75rem;  /* 12px — buttons, toasts                */
-  --radius-xl:   1rem;     /* 16px — cards, panels, tables          */
-  --radius-2xl:  1.5rem;   /* 24px — modals, large surfaces         */
-  --radius-full: 9999px;   /* pill — badges, avatars, dots          */
+  /* ── Layout constants ───────────────────────────────────────────── */
+  --spacing-topbar: 3.5rem; /* 56px — fixed topbar height        */
+  --spacing-nav: 13rem; /* 208px — sidebar nav width         */
+  --spacing-icon-sm: 1.75rem; /* 28px — sm icon-only button        */
+  --spacing-icon-md: 2.25rem; /* 36px — md icon-only button        */
+  --spacing-icon-lg: 2.75rem; /* 44px — lg icon-only button        */
 
-  --border-width-md: 2px;  /* actieve states, focus ringen         */
-  --border-width-lg: 4px;  /* nadruk, geselecteerde items          */
+  --radius-sm: 0.25rem; /*  4px — tags, tooltips, tiny elements  */
+  --radius-md: 0.5rem; /*  8px — inputs, small buttons          */
+  --radius-lg: 0.75rem; /* 12px — buttons, toasts                */
+  --radius-xl: 1rem; /* 16px — cards, panels, tables          */
+  --radius-2xl: 1.5rem; /* 24px — modals, large surfaces         */
+  --radius-full: 9999px; /* pill — badges, avatars, dots          */
 
-  --shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md:  0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
-  --shadow-lg:  0 4px 12px -2px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.06);
-  --shadow-xl:  0 10px 24px -4px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.08);
+  --border-width-md: 2px; /* actieve states, focus ringen         */
+  --border-width-lg: 4px; /* nadruk, geselecteerde items          */
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 4px 12px -2px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-xl: 0 10px 24px -4px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.08);
 }
-
 
 /* ─────────────────────────────────────────────────────────────────────────────
    STATIC PALETTE TOKENS
@@ -47,7 +54,7 @@
      Hue 192°  |  Brand color #004050 at 900
      Also set in main.ts definePreset so PrimeVue components match.
   ─────────────────────────────────────────────────────────────────── */
-  --color-primary-50:  #f3fafc;
+  --color-primary-50: #f3fafc;
   --color-primary-100: #e1f5fa;
   --color-primary-200: #bceaf5;
   --color-primary-300: #7edaf1;
@@ -55,14 +62,14 @@
   --color-primary-500: #0ba5cc;
   --color-primary-600: #047c9a;
   --color-primary-700: #055f76;
-  --color-primary-800: #054b5c;
-  --color-primary-900: #004050;
-  --color-primary-950: #002933;
+  --color-primary-800: #004050;
+  --color-primary-900: #003040;
+  --color-primary-950: #001820;
 
   /* ─── Secondary ───────────────────────────────────────────────────
      Hue 186°  |  Brand color #53c0cb at 400
   ─────────────────────────────────────────────────────────────────── */
-  --color-secondary-50:  #f0f9fa;
+  --color-secondary-50: #f0f9fa;
   --color-secondary-100: #e1f3f5;
   --color-secondary-200: #b9e4e9;
   --color-secondary-300: #8ad3db;
@@ -77,7 +84,7 @@
   /* ─── Offer / discount ────────────────────────────────────────────
      Hue 355°  |  Brand color #e94b57 at 500
   ─────────────────────────────────────────────────────────────────── */
-  --color-offer-50:  #fdf1f2;
+  --color-offer-50: #fdf1f2;
   --color-offer-100: #fbdadd;
   --color-offer-200: #f8aab0;
   --color-offer-300: #f57a84;
@@ -94,7 +101,7 @@
      Overrides tailwindcss-primeui's --color-surface-* mapping with
      our custom teal-tinted scale.
   ─────────────────────────────────────────────────────────────────── */
-  --color-surface-50:  #f6f8f9;
+  --color-surface-50: #f6f8f9;
   --color-surface-100: #edf2f2;
   --color-surface-200: #dbe5e6;
   --color-surface-300: #bcd0d2;
@@ -109,7 +116,7 @@
   /* ─── Danger ──────────────────────────────────────────────────────
      Hue 0°  |  Errors, destructive actions
   ─────────────────────────────────────────────────────────────────── */
-  --color-danger-50:  #fff1f1;
+  --color-danger-50: #fff1f1;
   --color-danger-100: #ffe0e0;
   --color-danger-200: #ffc5c5;
   --color-danger-300: #ff9d9d;
@@ -124,7 +131,7 @@
   /* ─── Warning ─────────────────────────────────────────────────────
      Hue 38°  |  Caution, non-blocking alerts
   ─────────────────────────────────────────────────────────────────── */
-  --color-warning-50:  #fffbeb;
+  --color-warning-50: #fffbeb;
   --color-warning-100: #fef3c7;
   --color-warning-200: #fde68a;
   --color-warning-300: #fcd34d;
@@ -139,7 +146,7 @@
   /* ─── Info ────────────────────────────────────────────────────────
      Hue 210°  |  Informational, neutral feedback
   ─────────────────────────────────────────────────────────────────── */
-  --color-info-50:  #eff6ff;
+  --color-info-50: #eff6ff;
   --color-info-100: #dbeafe;
   --color-info-200: #bfdbfe;
   --color-info-300: #93c5fd;
@@ -154,7 +161,7 @@
   /* ─── Success ─────────────────────────────────────────────────────
      Hue 142°  |  Confirmations, completed states
   ─────────────────────────────────────────────────────────────────── */
-  --color-success-50:  #f0fdf4;
+  --color-success-50: #f0fdf4;
   --color-success-100: #dcfce7;
   --color-success-200: #bbf7d0;
   --color-success-300: #86efac;
@@ -174,15 +181,15 @@
    the static palette tokens above.
 ───────────────────────────────────────────────────────────────────────────── */
 @theme inline {
-  --color-background:       var(--background);
-  --color-foreground:       var(--foreground);
-  --color-card:             var(--card);
-  --color-card-foreground:  var(--card-foreground);
-  --color-muted:            var(--muted);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-border:           var(--border);
-  --color-border-strong:    var(--border-strong);
-  --color-input:            var(--input);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -191,7 +198,7 @@
    utility class in the templates, so we duplicate them here.
 ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --color-primary-50:  #f3fafc;
+  --color-primary-50: #f3fafc;
   --color-primary-100: #e1f5fa;
   --color-primary-200: #bceaf5;
   --color-primary-300: #7edaf1;
@@ -199,11 +206,11 @@
   --color-primary-500: #0ba5cc;
   --color-primary-600: #047c9a;
   --color-primary-700: #055f76;
-  --color-primary-800: #054b5c;
-  --color-primary-900: #004050;
-  --color-primary-950: #002933;
+  --color-primary-800: #004050;
+  --color-primary-900: #003040;
+  --color-primary-950: #001820;
 
-  --color-secondary-50:  #f0f9fa;
+  --color-secondary-50: #f0f9fa;
   --color-secondary-100: #e1f3f5;
   --color-secondary-200: #b9e4e9;
   --color-secondary-300: #8ad3db;
@@ -215,7 +222,7 @@
   --color-secondary-900: #0d282b;
   --color-secondary-950: #09191b;
 
-  --color-offer-50:  #fdf1f2;
+  --color-offer-50: #fdf1f2;
   --color-offer-100: #fbdadd;
   --color-offer-200: #f8aab0;
   --color-offer-300: #f57a84;
@@ -227,7 +234,7 @@
   --color-offer-900: #4c1015;
   --color-offer-950: #2d0b0e;
 
-  --color-surface-50:  #f6f8f9;
+  --color-surface-50: #f6f8f9;
   --color-surface-100: #edf2f2;
   --color-surface-200: #dbe5e6;
   --color-surface-300: #bcd0d2;
@@ -239,7 +246,7 @@
   --color-surface-900: #101819;
   --color-surface-950: #0a0f10;
 
-  --color-danger-50:  #fff1f1;
+  --color-danger-50: #fff1f1;
   --color-danger-100: #ffe0e0;
   --color-danger-200: #ffc5c5;
   --color-danger-300: #ff9d9d;
@@ -251,7 +258,7 @@
   --color-danger-900: #841414;
   --color-danger-950: #480505;
 
-  --color-warning-50:  #fffbeb;
+  --color-warning-50: #fffbeb;
   --color-warning-100: #fef3c7;
   --color-warning-200: #fde68a;
   --color-warning-300: #fcd34d;
@@ -263,7 +270,7 @@
   --color-warning-900: #78350f;
   --color-warning-950: #451a03;
 
-  --color-info-50:  #eff6ff;
+  --color-info-50: #eff6ff;
   --color-info-100: #dbeafe;
   --color-info-200: #bfdbfe;
   --color-info-300: #93c5fd;
@@ -275,7 +282,7 @@
   --color-info-900: #1e3a8a;
   --color-info-950: #172554;
 
-  --color-success-50:  #f0fdf4;
+  --color-success-50: #f0fdf4;
   --color-success-100: #dcfce7;
   --color-success-200: #bbf7d0;
   --color-success-300: #86efac;
@@ -290,34 +297,48 @@
 
 /* ─── Light mode ──────────────────────────────────────────────────────────── */
 :root {
-  --background:       var(--color-surface-50);   /* page bg              */
-  --foreground:       var(--color-surface-900);  /* body text            */
-  --card:             #ffffff;                   /* cards / panels       */
-  --card-foreground:  var(--color-surface-900);  /* text on cards        */
-  --muted:            var(--color-surface-100);  /* subtle bg            */
-  --muted-foreground: var(--color-surface-500);  /* secondary text       */
-  --border:           var(--color-surface-200);  /* default borders      */
-  --border-strong:    var(--color-surface-300);  /* emphasized borders   */
-  --input:            var(--color-surface-200);  /* input borders        */
+  --background: var(--color-surface-50); /* page bg              */
+  --foreground: var(--color-surface-900); /* body text            */
+  --card: #ffffff; /* cards / panels       */
+  --card-foreground: var(--color-surface-900); /* text on cards        */
+  --muted: var(--color-surface-100); /* subtle bg            */
+  --muted-foreground: var(--color-surface-500); /* secondary text       */
+  --border: var(--color-surface-200); /* default borders      */
+  --border-strong: var(--color-surface-300); /* emphasized borders   */
+  --input: var(--color-surface-200); /* input borders        */
 }
 
 /* ─── Dark mode ───────────────────────────────────────────────────────────── */
 .dark {
-  --background:       var(--color-surface-950);  /* page bg              */
-  --foreground:       var(--color-surface-50);   /* body text            */
-  --card:             var(--color-surface-900);  /* cards / panels       */
-  --card-foreground:  var(--color-surface-50);   /* text on cards        */
-  --muted:            var(--color-surface-800);  /* subtle bg            */
-  --muted-foreground: var(--color-surface-400);  /* secondary text       */
-  --border:           var(--color-surface-700);  /* default borders      */
-  --border-strong:    var(--color-surface-600);  /* emphasized borders   */
-  --input:            var(--color-surface-700);  /* input borders        */
+  --background: var(--color-surface-950); /* page bg              */
+  --foreground: var(--color-surface-50); /* body text            */
+  --card: var(--color-surface-900); /* cards / panels       */
+  --card-foreground: var(--color-surface-50); /* text on cards        */
+  --muted: var(--color-surface-800); /* subtle bg            */
+  --muted-foreground: var(--color-surface-400); /* secondary text       */
+  --border: var(--color-surface-700); /* default borders      */
+  --border-strong: var(--color-surface-600); /* emphasized borders   */
+  --input: var(--color-surface-700); /* input borders        */
 }
 
 /* ─── Dark mode shadow overrides ─────────────────────────────────────────── */
 /* Tailwind compiles shadow values statically, so we override box-shadow     */
 /* directly. Dark bg needs higher opacity to make elevation visible.         */
-.dark .shadow-sm { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4); }
-.dark .shadow-md { box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.5), 0 1px 3px -1px rgb(0 0 0 / 0.4); }
-.dark .shadow-lg { box-shadow: 0 6px 18px -2px rgb(0 0 0 / 0.6), 0 3px 6px -2px rgb(0 0 0 / 0.4); }
-.dark .shadow-xl { box-shadow: 0 14px 32px -4px rgb(0 0 0 / 0.7), 0 6px 12px -4px rgb(0 0 0 / 0.5); }
+.dark .shadow-sm {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4);
+}
+.dark .shadow-md {
+  box-shadow:
+    0 2px 8px 0 rgb(0 0 0 / 0.5),
+    0 1px 3px -1px rgb(0 0 0 / 0.4);
+}
+.dark .shadow-lg {
+  box-shadow:
+    0 6px 18px -2px rgb(0 0 0 / 0.6),
+    0 3px 6px -2px rgb(0 0 0 / 0.4);
+}
+.dark .shadow-xl {
+  box-shadow:
+    0 14px 32px -4px rgb(0 0 0 / 0.7),
+    0 6px 12px -4px rgb(0 0 0 / 0.5);
+}

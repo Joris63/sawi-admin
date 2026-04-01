@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { AppH2, AppBody, AppSmall } from '@/components/ui/typography'
+import { AppH2, AppBody } from '@/components/ui/typography'
+import { useCopy } from '@/composables/useCopy'
+
+const { copied, copy } = useCopy()
 
 const shadowTokens = [
   { class: 'shadow-sm', usage: 'Subtiele lift — kaarten, inputs, chips' },
@@ -13,17 +16,19 @@ const shadowTokens = [
   <section id="shadow">
     <AppH2>Schaduw</AppH2>
     <AppBody muted class="shadow-intro">
-      Vier elevatieniveaus. Gebruik schaduw spaarzaam — alleen om drijvende of interactieve elementen te onderscheiden.
+      Vier elevatieniveaus voor drijvende en interactieve elementen. Gebruik schaduw spaarzaam —
+      niet voor decoratie.
     </AppBody>
 
-    <hr class="shadow-divider mt-lg mb-xl" />
-
-    <AppSmall muted class="shadow-section-desc">
-      Tokens zijn gedefinieerd in <code class="shadow-code">@theme</code> — gebruik de klasse direct.
-    </AppSmall>
+    <hr class="shadow-divider mt-xl mb-xl" />
 
     <div class="shadow-grid">
-      <div v-for="token in shadowTokens" :key="token.class" class="shadow-card">
+      <div
+        v-for="token in shadowTokens"
+        :key="token.class"
+        class="shadow-card sg-copyable"
+        @click="copy(token.class)"
+      >
         <div class="shadow-demo" :class="token.class" />
         <div class="shadow-card-meta">
           <code class="shadow-token">{{ token.class }}</code>
@@ -31,5 +36,11 @@ const shadowTokens = [
         </div>
       </div>
     </div>
+
+    <Transition name="fade-up">
+      <div v-if="copied" class="sg-copy-toast">
+        Gekopieerd: <span class="font-semibold">{{ copied }}</span>
+      </div>
+    </Transition>
   </section>
 </template>

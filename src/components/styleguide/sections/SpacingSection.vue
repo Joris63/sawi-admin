@@ -1,25 +1,28 @@
 <script setup lang="ts">
-import { AppH2, AppH3, AppBody, AppSmall, AppCaption } from '@/components/ui/typography'
+import { ref } from 'vue'
+import { AppH2, AppH3, AppBody, AppSmall } from '@/components/ui/typography'
+import AppButton from '@/components/ui/AppButton.vue'
+import { useCopy } from '@/composables/useCopy'
 
-const tokens = [
-  { name: 'xs',  rem: '0.25rem', px:  4, example: 'p-xs'  },
-  { name: 'sm',  rem: '0.5rem',  px:  8, example: 'p-sm'  },
-  { name: 'md',  rem: '1rem',    px: 16, example: 'p-md'  },
-  { name: 'lg',  rem: '1.5rem',  px: 24, example: 'p-lg'  },
-  { name: 'xl',  rem: '2rem',    px: 32, example: 'p-xl'  },
-  { name: '2xl', rem: '3rem',    px: 48, example: 'p-2xl' },
-  { name: '3xl', rem: '4rem',    px: 64, example: 'p-3xl' },
+const { copied, copy } = useCopy()
+
+const prefixGroups = [
+  ['p', 'px', 'py', 'pt', 'pb'],
+  ['m', 'mx', 'my', 'mt', 'mb'],
+  ['gap', 'gap-x', 'gap-y'],
+  ['w', 'h', 'size'],
 ]
 
-const prefixExamples: { prefix: string; label: string }[] = [
-  { prefix: 'p',     label: 'Padding' },
-  { prefix: 'px',    label: 'Padding X' },
-  { prefix: 'py',    label: 'Padding Y' },
-  { prefix: 'mt',    label: 'Margin top' },
-  { prefix: 'mb',    label: 'Margin bottom' },
-  { prefix: 'gap',   label: 'Gap' },
-  { prefix: 'gap-x', label: 'Gap X' },
-  { prefix: 'gap-y', label: 'Gap Y' },
+const selectedPrefix = ref('p')
+
+const tokens = [
+  { name: 'xs', rem: '0.25rem', px: 4 },
+  { name: 'sm', rem: '0.5rem', px: 8 },
+  { name: 'md', rem: '1rem', px: 16 },
+  { name: 'lg', rem: '1.5rem', px: 24 },
+  { name: 'xl', rem: '2rem', px: 32 },
+  { name: '2xl', rem: '3rem', px: 48 },
+  { name: '3xl', rem: '4rem', px: 64 },
 ]
 </script>
 
@@ -27,73 +30,59 @@ const prefixExamples: { prefix: string; label: string }[] = [
   <section id="spacing">
     <AppH2>Spatiëring</AppH2>
     <AppBody muted class="spacing-intro">
-      Gebruik de benoemde spacing-tokens als Tailwind-klassen.
-      De tokens zijn gedefinieerd in <code class="spacing-code">@theme</code> — geen custom functie nodig.
+      Zeven benoemde tokens voor alle witruimte in de interface. Gebruik altijd een token — geen
+      arbitrary waarden zoals <code class="spacing-code">p-[18px]</code>.
     </AppBody>
 
-    <hr class="spacing-divider mt-lg mb-xl" />
+    <!-- Prefix switcher -->
+    <div class="spacing-prefix-switcher mt-lg">
+      <template v-for="(group, i) in prefixGroups" :key="i">
+        <div v-if="i > 0" class="spacing-prefix-divider" />
+        <AppButton
+          v-for="p in group"
+          :key="p"
+          :severity="selectedPrefix === p ? 'primary' : 'ghost'"
+          :variant="selectedPrefix === p ? 'filled' : 'outlined'"
+          size="sm"
+          :label="`${p}-`"
+          class="font-mono"
+          @click="selectedPrefix = p"
+        />
+      </template>
+    </div>
 
     <!-- Token scale -->
     <AppH3>Tokens</AppH3>
     <AppSmall muted class="spacing-section-desc">
-      Zeven tokens van <code class="spacing-code">xs</code> tot <code class="spacing-code">3xl</code>.
-      <code class="spacing-code">md</code> (16px) is de basiseenheid.
+      <code class="spacing-code">md</code> (16px) is de basiseenheid. Gebruik
+      <code class="spacing-code">xs</code>–<code class="spacing-code">sm</code> voor compacte
+      UI-elementen, <code class="spacing-code">lg</code>–<code class="spacing-code">3xl</code> voor
+      layout en sectieafstand.
     </AppSmall>
 
     <div class="spacing-scale">
-      <div v-for="token in tokens" :key="token.name" class="spacing-scale-row">
-        <!-- Meta -->
+      <div
+        v-for="token in tokens"
+        :key="token.name"
+        class="spacing-scale-row sg-copyable"
+        :title="`Kopieer ${selectedPrefix}-${token.name}`"
+        @click="copy(`${selectedPrefix}-${token.name}`)"
+      >
         <div class="spacing-scale-meta">
           <code class="spacing-scale-token">{{ token.name }}</code>
           <span class="spacing-scale-detail">{{ token.rem }} · {{ token.px }}px</span>
         </div>
-
-        <!-- Visual bar -->
         <div class="spacing-scale-bar-wrap">
           <div class="spacing-scale-bar" :style="{ width: `${token.px}px` }" />
         </div>
-
-        <!-- Example class -->
-        <code class="spacing-scale-example">{{ token.example }}</code>
+        <code class="spacing-scale-example">{{ selectedPrefix }}-{{ token.name }}</code>
       </div>
     </div>
 
-    <hr class="spacing-divider mt-2xl mb-xl" />
-
-    <!-- Usage -->
-    <AppH3>Gebruik</AppH3>
-    <AppSmall muted class="spacing-section-desc">
-      Gebruik de tokens als gewone Tailwind-klassen. Alle beschikbare prefixen:
-    </AppSmall>
-
-    <!-- Code example -->
-    <div class="spacing-code-block">
-      <pre class="spacing-pre"><code>&lt;div class="p-md"&gt;          → 1rem   (16px)
-&lt;div class="gap-lg"&gt;        → 1.5rem (24px)
-&lt;div class="px-lg py-sm"&gt;   → 1.5rem / 0.5rem
-
-&lt;!-- Alle Tailwind spacing-prefixen werken: --&gt;
-p-xs  px-sm  py-md  mt-lg  mb-xl  gap-2xl  gap-x-sm  ...</code></pre>
-    </div>
-
-    <!-- Prefix table -->
-    <div class="spacing-prefix-table">
-      <div class="spacing-prefix-header">
-        <AppCaption>Prefix</AppCaption>
-        <AppCaption>Omschrijving</AppCaption>
-        <AppCaption v-for="token in tokens" :key="token.name">{{ token.name }}</AppCaption>
+    <Transition name="fade-up">
+      <div v-if="copied" class="sg-copy-toast">
+        Gekopieerd: <span class="font-semibold">{{ copied }}</span>
       </div>
-      <div v-for="{ prefix, label } in prefixExamples" :key="prefix" class="spacing-prefix-row">
-        <code class="spacing-prefix-name">{{ prefix }}</code>
-        <AppCaption>{{ label }}</AppCaption>
-        <AppCaption
-          v-for="token in tokens"
-          :key="token.name"
-          class="spacing-prefix-cell"
-        >
-          {{ prefix }}-{{ token.name }}
-        </AppCaption>
-      </div>
-    </div>
+    </Transition>
   </section>
 </template>
