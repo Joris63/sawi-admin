@@ -7,6 +7,7 @@ import Aura from '@primeuix/themes/aura'
 import App from './App.vue'
 import router from './router'
 import 'primeicons/primeicons.css'
+import 'flag-icons/css/flag-icons.min.css'
 import './assets/css/main.css'
 
 const AppPreset = definePreset(Aura, {

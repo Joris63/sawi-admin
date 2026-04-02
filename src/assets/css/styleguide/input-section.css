@@ -1,0 +1,19 @@
+/* ── Input section ──────────────────────────────────────────────────────────── */
+
+.input-section-intro {
+  @apply mt-sm;
+}
+.input-section-divider {
+  @apply border-border -mx-md sm:-mx-xl lg:-mx-2xl;
+}
+.input-section-desc {
+  @apply mt-xs mb-lg;
+}
+.input-code {
+  @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em];
+}
+
+.input-section-grid {
+  @apply grid gap-lg;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}

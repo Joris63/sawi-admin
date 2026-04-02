@@ -15,10 +15,10 @@
   @apply text-xs   px-sm py-xs rounded-md;
 }
 .app-btn--md {
-  @apply text-sm   px-md py-sm rounded-lg;
+  @apply text-base px-md py-sm rounded-md;
 }
 .app-btn--lg {
-  @apply text-base px-lg py-sm rounded-lg;
+  @apply text-lg  px-lg py-sm rounded-md;
 }
 
 /* ── PRIMARY ───────────────────────────────────────────────────────────────── */
@@ -202,14 +202,14 @@
 
 /* Menu panel */
 .app-splitbtn-menu {
-  @apply absolute bg-card border border-border rounded-xl shadow-md py-xs min-w-[10rem] z-50 mt-xs;
+  @apply absolute bg-card border border-border rounded-lg shadow-md py-xs min-w-[10rem] z-50 mt-xs;
 }
 .app-splitbtn-list {
   @apply list-none m-0 p-0;
 }
 .app-splitbtn-item-link {
-  @apply flex items-center gap-sm px-md py-sm text-sm text-foreground cursor-pointer
-         transition-colors rounded-lg mx-xs;
+  @apply flex items-center gap-sm px-md py-sm text-base text-foreground cursor-pointer
+         transition-colors rounded-md mx-xs;
 }
 .app-splitbtn-item-link:hover {
   @apply bg-muted;
@@ -220,7 +220,7 @@
   @apply text-muted-foreground;
 }
 .app-splitbtn-item-label {
-  @apply flex-1;
+  @apply flex-1 whitespace-nowrap;
 }
 .app-splitbtn-separator {
   @apply border-b border-border my-xs mx-md;

@@ -17,6 +17,7 @@
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
     "@tailwindcss/vite": "^4.2.2",
+    "flag-icons": "^7.5.0",
     "highlight.js": "^11.11.1",
     "pinia": "^3.0.4",
     "primeicons": "^7.0.0",

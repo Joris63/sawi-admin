@@ -27,7 +27,6 @@ const props = withDefaults(
 
 const pvSeverity = computed(() => (props.severity === 'ghost' ? 'secondary' : props.severity))
 const isDisabled = computed(() => props.disabled || props.loading)
-
 const iconOnly = computed(() => !!props.icon && !props.label)
 
 const btnClasses = computed(() => [

@@ -1,0 +1,134 @@
+/* ── Input wrapper ──────────────────────────────────────────────────────────── */
+
+.app-input-wrap {
+  @apply flex flex-col gap-xs w-full;
+}
+.app-input-label {
+  @apply text-base font-medium text-foreground;
+}
+.app-input-help {
+  @apply text-sm text-muted-foreground;
+}
+
+/* ── Base input field ───────────────────────────────────────────────────────── */
+
+.app-input-field {
+  @apply w-full px-sm py-sm border border-border rounded-md bg-card text-foreground text-base
+         placeholder:text-muted-foreground outline-none transition-colors duration-150;
+}
+
+.app-input-field:hover:not(:disabled):not(:focus) {
+  @apply border-border-strong;
+}
+.app-input-field:focus {
+  @apply border-primary-500 ring-2 ring-primary-500/15;
+}
+.app-input-field:disabled {
+  @apply opacity-50 cursor-not-allowed bg-muted;
+}
+.app-input-field--invalid {
+  @apply border-danger-500;
+}
+.app-input-field--invalid:focus {
+  @apply border-danger-500 ring-danger-500/15;
+}
+
+/* Grouped variant (tel/vat — connects to the country select) */
+.app-input-field--grouped {
+  @apply rounded-l-none border-l-0 flex-1;
+}
+
+/* ── Input group ────────────────────────────────────────────────────────────── */
+
+.app-input-group {
+  @apply flex w-full;
+}
+
+/* ── Country select ─────────────────────────────────────────────────────────── */
+
+.app-country-select {
+  @apply px-sm py-sm border border-border rounded-l-md
+         bg-card cursor-pointer shrink-0
+         transition-colors duration-150;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--spacing-xs);
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.app-country-select:hover:not([data-p-focused='true']):not([data-p-open='true']) {
+  @apply border-border-strong;
+}
+
+.app-country-select:focus,
+.app-country-select:focus-visible,
+.app-country-select[data-p-focused='true'],
+.app-country-select[data-p-open='true'] {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.app-country-select-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  line-height: 1;
+}
+
+.app-country-select-arrow {
+  @apply text-muted-foreground;
+  font-size: 0.65rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  transition: transform 150ms ease;
+}
+
+.app-country-flag {
+  display: inline-block;
+  width: 1.25rem;
+  height: 0.9375rem;
+  flex-shrink: 0;
+}
+
+.app-country-code {
+  @apply text-base font-medium text-foreground;
+}
+
+/* ── Country dropdown overlay ───────────────────────────────────────────────── */
+
+.app-country-overlay {
+  @apply bg-card border border-border rounded-lg shadow-lg py-xs overflow-hidden;
+  min-width: 14rem;
+  z-index: 1000;
+  margin-top: var(--spacing-xs);
+}
+
+.app-country-list-wrap {
+  @apply overflow-y-auto max-h-64;
+}
+
+.app-country-list {
+  @apply m-0 p-0 list-none;
+}
+
+.app-country-option {
+  @apply flex items-center gap-sm px-md py-sm text-base text-foreground
+         cursor-pointer transition-colors duration-100;
+}
+
+.app-country-option:hover {
+  @apply bg-muted;
+}
+.app-country-option--selected {
+  @apply bg-primary-50 text-primary-700 dark:bg-primary-950 dark:text-primary-300;
+}
+.app-country-option--selected:hover {
+  @apply bg-primary-100 dark:bg-primary-900;
+}
+
+.app-country-option-code {
+  @apply text-sm text-muted-foreground ml-auto;
+}

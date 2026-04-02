@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import Button from 'primevue/button'
+import AppButton from '@/components/ui/AppButton.vue'
 import logoRaw from '@/assets/images/logo.svg?raw'
 
 const isDark = ref(false)
@@ -19,12 +19,13 @@ function toggleDark() {
   <header class="sg-topbar">
     <span v-html="logoRaw" class="sg-topbar-logo" />
 
-    <Button
-      text
+    <AppButton
+      severity="ghost"
+      variant="text"
       rounded
       :icon="isDark ? 'pi pi-sun' : 'pi pi-moon'"
       :aria-label="isDark ? 'Lichte modus' : 'Donkere modus'"
-      :pt="{ root: { class: 'sg-topbar-btn' } }"
+      class="sg-topbar-btn"
       @click="toggleDark"
     />
   </header>

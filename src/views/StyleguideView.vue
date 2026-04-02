@@ -10,6 +10,7 @@ import SpacingSection from '@/components/styleguide/sections/SpacingSection.vue'
 import BordersSection from '@/components/styleguide/sections/BordersSection.vue'
 import ShadowSection from '@/components/styleguide/sections/ShadowSection.vue'
 import ButtonsSection from '@/components/styleguide/sections/ButtonsSection.vue'
+import InputTextSection from '@/components/styleguide/sections/InputTextSection.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -21,6 +22,7 @@ const sections: Record<string, object> = {
   borders: BordersSection,
   shadow: ShadowSection,
   buttons: ButtonsSection,
+  'input-text': InputTextSection,
 }
 
 const navGroups: NavGroup[] = [
@@ -37,6 +39,12 @@ const navGroups: NavGroup[] = [
   {
     label: 'Componenten',
     items: [{ id: 'buttons', label: 'Knoppen', icon: 'pi pi-stop-circle' }],
+  },
+  {
+    label: 'Formulieren',
+    collapsible: true,
+    defaultOpen: true,
+    items: [{ id: 'input-text', label: 'Tekstveld', icon: 'pi pi-pen-to-square' }],
   },
 ]
 
