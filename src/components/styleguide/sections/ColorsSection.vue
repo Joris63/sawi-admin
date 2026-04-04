@@ -250,7 +250,7 @@ const colsClass: Record<number, string> = {
     </SwBody>
 
     <!-- Prefix switcher -->
-    <div class="prefix-switcher mt-lg">
+    <div class="prefix-switcher mt-xl">
       <SwButton
         v-for="p in prefixes"
         :key="p"
@@ -316,7 +316,7 @@ const colsClass: Record<number, string> = {
       </div>
     </div>
 
-    <hr class="colors-divider mt-2xl mb-xl" />
+    <hr class="colors-divider mt-3xl mb-2xl" />
 
     <!-- ── Usage ─────────────────────────────────────────────────────────── -->
     <div>

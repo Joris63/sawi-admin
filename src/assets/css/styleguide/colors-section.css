@@ -10,10 +10,10 @@
 
 /* Palette groups */
 .palette-groups {
-  @apply space-y-2xl;
+  @apply space-y-3xl;
 }
 .palette-group-desc {
-  @apply mt-1 mb-lg;
+  @apply mt-1 mb-xl;
 }
 
 /* Responsive grid column helpers (shared by palette + class-ref grids) */
@@ -29,7 +29,7 @@
 
 /* Palette card */
 .palette-grid {
-  @apply grid gap-md;
+  @apply grid gap-lg;
 }
 
 .palette-hero {
@@ -95,21 +95,21 @@
 /* ── Usage section ────────────────────────────────────────────────────────── */
 
 .usage-intro {
-  @apply mt-xs mb-xl;
+  @apply mt-xs mb-2xl;
 }
 
 /* Class pattern box */
 .class-pattern {
-  @apply rounded-xl border border-border overflow-hidden mb-xl;
+  @apply rounded-xl border border-border overflow-hidden mb-2xl;
 }
 .class-pattern-header {
-  @apply px-md py-sm bg-muted border-b border-border;
+  @apply px-lg py-sm bg-muted border-b border-border;
 }
 .class-pattern-label {
   @apply text-xs font-semibold text-muted-foreground uppercase tracking-wider;
 }
 .class-pattern-body {
-  @apply p-md grid grid-cols-1 sm:grid-cols-2 gap-x-xl gap-y-sm;
+  @apply p-lg grid grid-cols-1 sm:grid-cols-2 gap-x-2xl gap-y-sm;
 }
 .class-pattern-row {
   @apply flex items-center gap-sm;
@@ -121,7 +121,7 @@
   @apply text-xs font-mono text-muted-foreground;
 }
 .class-pattern-footer {
-  @apply px-md pb-md;
+  @apply px-lg pb-lg;
 }
 .class-pattern-footer-text {
   @apply text-xs text-muted-foreground;
@@ -129,13 +129,13 @@
 
 /* Class reference */
 .class-ref-groups {
-  @apply space-y-xl;
+  @apply space-y-2xl;
 }
 .class-ref-group-label {
   @apply text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-sm;
 }
 .class-ref-grid {
-  @apply grid gap-md;
+  @apply grid gap-lg;
 }
 .class-ref-card {
   @apply rounded-xl border border-border overflow-hidden;
@@ -183,5 +183,5 @@
 
 /* Prefix switcher */
 .prefix-switcher {
-  @apply flex flex-wrap gap-xs sticky top-14 z-10 bg-background py-sm -mx-md px-md sm:-mx-xl sm:px-xl lg:-mx-2xl lg:px-2xl border-b border-border mb-xl;
+  @apply flex flex-wrap gap-xs sticky top-14 z-10 bg-background py-sm -mx-lg px-lg sm:-mx-2xl sm:px-2xl lg:-mx-3xl lg:px-3xl border-b border-border mb-2xl;
 }

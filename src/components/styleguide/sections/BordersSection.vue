@@ -47,7 +47,7 @@ const colorTokens = [
       geen losse waarden of arbitrary radius.
     </SwBody>
 
-    <hr class="borders-divider mt-xl mb-xl" />
+    <hr class="borders-divider mt-2xl mb-2xl" />
 
     <!-- Radius -->
     <SwH3>Hoekradius</SwH3>
@@ -75,7 +75,7 @@ const colorTokens = [
       </div>
     </div>
 
-    <hr class="borders-divider mt-2xl mb-xl" />
+    <hr class="borders-divider mt-3xl mb-2xl" />
 
     <!-- Width -->
     <SwH3>Breedte</SwH3>
@@ -101,7 +101,7 @@ const colorTokens = [
       </div>
     </div>
 
-    <hr class="borders-divider mt-2xl mb-xl" />
+    <hr class="borders-divider mt-3xl mb-2xl" />
 
     <!-- Color -->
     <SwH3>Kleur</SwH3>

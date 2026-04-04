@@ -4,10 +4,10 @@
   @apply mt-sm;
 }
 .spacing-divider {
-  @apply border-border -mx-md sm:-mx-xl lg:-mx-2xl;
+  @apply border-border -mx-lg sm:-mx-2xl lg:-mx-3xl;
 }
 .spacing-section-desc {
-  @apply mt-xs mb-lg;
+  @apply mt-xs mb-xl;
 }
 .spacing-code {
   @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em];
@@ -15,7 +15,7 @@
 
 /* Prefix switcher */
 .spacing-prefix-switcher {
-  @apply flex flex-wrap items-center gap-xs sticky top-14 z-10 bg-background py-sm -mx-md px-md sm:-mx-xl sm:px-xl lg:-mx-2xl lg:px-2xl border-b border-border mb-xl;
+  @apply flex flex-wrap items-center gap-xs sticky top-14 z-10 bg-background py-sm -mx-lg px-lg sm:-mx-2xl sm:px-2xl lg:-mx-3xl lg:px-3xl border-b border-border mb-2xl;
 }
 .spacing-prefix-divider {
   @apply self-stretch w-px bg-border mx-xs;
@@ -27,7 +27,7 @@
 }
 
 .spacing-scale-row {
-  @apply grid items-center gap-lg px-md py-sm bg-card;
+  @apply grid items-center gap-xl px-lg py-sm bg-card;
   grid-template-columns: 8rem 1fr 6rem;
 }
 

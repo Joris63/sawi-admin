@@ -4,10 +4,10 @@
   @apply mt-sm;
 }
 .borders-divider {
-  @apply border-border -mx-md sm:-mx-xl lg:-mx-2xl;
+  @apply border-border -mx-lg sm:-mx-2xl lg:-mx-3xl;
 }
 .borders-section-desc {
-  @apply mt-xs mb-lg;
+  @apply mt-xs mb-xl;
 }
 .borders-code {
   @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em];
@@ -19,7 +19,7 @@
 }
 
 .radius-card {
-  @apply flex flex-col gap-sm p-md bg-card border border-border rounded-xl;
+  @apply flex flex-col gap-sm p-lg bg-card border border-border rounded-xl;
 }
 
 .radius-demo {
@@ -45,7 +45,7 @@
 }
 
 .width-card {
-  @apply flex flex-col gap-sm p-md bg-card border border-border rounded-xl;
+  @apply flex flex-col gap-sm p-lg bg-card border border-border rounded-xl;
 }
 
 .width-demo {
@@ -71,7 +71,7 @@
 }
 
 .border-color-row {
-  @apply flex items-center gap-md px-md py-sm bg-card rounded-xl border border-border;
+  @apply flex items-center gap-lg px-lg py-sm bg-card rounded-xl border border-border;
 }
 
 .border-color-demo {

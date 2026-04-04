@@ -5,7 +5,7 @@
 }
 
 .demo-preview {
-  @apply p-lg bg-card flex flex-wrap gap-sm items-center;
+  @apply p-xl bg-card flex flex-wrap gap-sm items-center;
 }
 
 .demo-toolbar {
@@ -17,6 +17,6 @@
 }
 
 .demo-pre {
-  @apply m-0 p-lg text-xs font-mono leading-relaxed overflow-x-auto
+  @apply m-0 p-xl text-xs font-mono leading-relaxed overflow-x-auto
          bg-surface-950 text-surface-100 dark:bg-surface-900 dark:text-surface-200;
 }

@@ -10,11 +10,11 @@
 /* ── Styleguide layout ────────────────────────────────────────────────────── */
 
 .sg-topbar {
-  @apply fixed top-0 left-0 right-0 h-topbar z-10 bg-primary-800 dark:bg-primary-400 flex items-center justify-between px-lg;
+  @apply fixed top-0 left-0 right-0 h-topbar z-10 bg-primary-800 dark:bg-primary-400 flex items-center justify-between px-xl;
 }
 
 .sg-topbar-logo {
-  @apply flex items-center h-xl text-white dark:text-primary-950;
+  @apply flex items-center h-2xl text-white dark:text-primary-950;
 }
 
 .sg-topbar-logo svg {
@@ -56,13 +56,13 @@
 }
 
 .sg-section {
-  @apply px-md sm:px-xl lg:px-2xl py-xl lg:py-2xl;
+  @apply px-lg sm:px-2xl lg:px-3xl py-2xl lg:py-3xl;
 }
 
 /* ── Shared copy toast ────────────────────────────────────────────────────── */
 
 .sg-copy-toast {
-  @apply fixed bottom-lg left-1/2 -translate-x-1/2 bg-foreground text-background text-xs font-mono px-md py-sm rounded-lg shadow-lg pointer-events-none z-50;
+  @apply fixed bottom-xl left-1/2 -translate-x-1/2 bg-foreground text-background text-xs font-mono px-lg py-sm rounded-lg shadow-lg pointer-events-none z-50;
 }
 
 /* ── Shared copyable item ─────────────────────────────────────────────────── */

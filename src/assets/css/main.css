@@ -27,11 +27,12 @@
 
   --spacing-xs: 0.25rem; /*  4px — icon gaps, badge padding       */
   --spacing-sm: 0.5rem; /*  8px — tight component internals      */
-  --spacing-md: 1rem; /* 16px — base unit, default spacing      */
-  --spacing-lg: 1.5rem; /* 24px — card padding, between groups   */
-  --spacing-xl: 2rem; /* 32px — between sections               */
-  --spacing-2xl: 3rem; /* 48px — page-level vertical rhythm     */
-  --spacing-3xl: 4rem; /* 64px — max page padding               */
+  --spacing-md: 0.75rem; /* 12px — input padding, comfortable UI  */
+  --spacing-lg: 1rem; /* 16px — base unit, default spacing     */
+  --spacing-xl: 1.5rem; /* 24px — card padding, between groups   */
+  --spacing-2xl: 2rem; /* 32px — between sections               */
+  --spacing-3xl: 3rem; /* 48px — page-level vertical rhythm     */
+  --spacing-4xl: 4rem; /* 64px — max page padding               */
 
   /* ── Layout constants ───────────────────────────────────────────── */
   --spacing-topbar: 3.5rem; /* 56px — fixed topbar height        */

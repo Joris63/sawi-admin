@@ -4,10 +4,10 @@
   @apply mt-sm;
 }
 .shadow-divider {
-  @apply border-border -mx-md sm:-mx-xl lg:-mx-2xl;
+  @apply border-border -mx-lg sm:-mx-2xl lg:-mx-3xl;
 }
 .shadow-section-desc {
-  @apply mt-xs mb-lg;
+  @apply mt-xs mb-xl;
 }
 .shadow-code {
   @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em];
@@ -15,11 +15,11 @@
 
 /* Shadow scale grid */
 .shadow-grid {
-  @apply grid grid-cols-2 lg:grid-cols-4 gap-lg;
+  @apply grid grid-cols-2 lg:grid-cols-4 gap-xl;
 }
 
 .shadow-card {
-  @apply flex flex-col gap-md;
+  @apply flex flex-col gap-lg;
 }
 
 .shadow-demo {

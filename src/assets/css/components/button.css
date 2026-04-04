@@ -15,10 +15,10 @@
   @apply text-xs   px-sm py-xs rounded-md;
 }
 .sw-btn--md {
-  @apply text-base px-md py-sm rounded-md;
+  @apply text-base px-lg py-sm rounded-md;
 }
 .sw-btn--lg {
-  @apply text-lg  px-lg py-sm rounded-md;
+  @apply text-lg  px-xl py-sm rounded-md;
 }
 
 /* ── PRIMARY ───────────────────────────────────────────────────────────────── */
@@ -205,10 +205,10 @@
   @apply absolute bg-card border border-border rounded-lg shadow-md py-xs min-w-[10rem] z-50 mt-xs;
 }
 .sw-splitbtn-list {
-  @apply list-none m-0 p-0;
+  @apply list-none m-0 p-0 flex flex-col;
 }
 .sw-splitbtn-item-link {
-  @apply flex items-center gap-sm px-md py-sm text-base text-foreground cursor-pointer
+  @apply flex items-center gap-sm px-lg py-sm text-base text-foreground cursor-pointer
          transition-colors rounded-md mx-xs;
 }
 .sw-splitbtn-item-link:hover {
@@ -223,7 +223,23 @@
   @apply flex-1 whitespace-nowrap;
 }
 .sw-splitbtn-separator {
-  @apply border-b border-border my-xs mx-md;
+  @apply border-b border-border my-xs;
+}
+
+/* ── Sub-menu ────────────────────────────────────────────────────────────────── */
+
+.sw-splitbtn-item {
+  @apply relative;
+}
+
+.sw-splitbtn-submenu {
+  @apply absolute -mt-xs left-full bg-card border border-border rounded-lg shadow-lg py-xs min-w-[10rem] z-50 flex-col;
+}
+
+.sw-splitbtn-submenu-icon {
+  @apply text-muted-foreground ml-auto;
+  font-size: 0.65rem;
+  line-height: 1;
 }
 
 /* ── Icon-only (square) ────────────────────────────────────────────────────── */

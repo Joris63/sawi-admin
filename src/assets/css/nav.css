@@ -1,20 +1,20 @@
 /* ── Vertical navigation ──────────────────────────────────────────────────── */
 
 .sw-nav {
-  @apply w-nav shrink-0 pt-sm pb-md;
+  @apply w-nav shrink-0 pt-sm pb-lg;
 }
 
 .sw-nav-group-label {
-  @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground pt-md px-lg pb-xs;
+  @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground pt-lg px-xl pb-xs;
 }
 
 .sw-nav-btn {
-  @apply w-full! justify-start! gap-sm! py-sm! pr-md! pl-md! rounded-none! border-0! border-l! border-l-transparent! text-base! font-normal! text-foreground!;
+  @apply w-full! justify-start! gap-sm! py-sm! pr-lg! pl-lg! rounded-none! border-0! border-l! border-l-transparent! text-base! font-normal! text-foreground!;
   border-left-style: solid !important;
 }
 
 .sw-nav-btn .p-button-icon {
-  @apply text-base w-md text-center opacity-70;
+  @apply text-base w-lg text-center opacity-70;
 }
 
 .sw-nav-btn--active {
@@ -31,7 +31,7 @@
 
 .sw-nav-group-toggle {
   @apply w-full flex items-center justify-between text-xs font-semibold uppercase tracking-wider
-         text-muted-foreground pt-md px-lg pb-sm cursor-pointer select-none
+         text-muted-foreground pt-lg px-xl pb-sm cursor-pointer select-none
          hover:text-foreground transition-colors;
 }
 

@@ -4,16 +4,19 @@
   @apply mt-sm;
 }
 .input-section-divider {
-  @apply border-border -mx-md sm:-mx-xl lg:-mx-2xl;
+  @apply border-border -mx-lg sm:-mx-2xl lg:-mx-3xl;
 }
 .input-section-desc {
-  @apply mt-xs mb-lg;
+  @apply mt-xs mb-xl;
+}
+.input-section-type-label {
+  @apply mt-2xl mb-xl;
 }
 .input-code {
   @apply font-mono text-primary-700 dark:text-primary-300 text-[0.9em];
 }
 
 .input-section-grid {
-  @apply grid gap-lg;
+  @apply grid gap-xl;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }

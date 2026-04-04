@@ -4,13 +4,13 @@
   @apply mt-sm;
 }
 .typo-divider {
-  @apply border-border -mx-md sm:-mx-xl lg:-mx-2xl;
+  @apply border-border -mx-lg sm:-mx-2xl lg:-mx-3xl;
 }
 .typo-section-title {
   @apply mb-xs;
 }
 .typo-section-desc {
-  @apply mt-xs mb-lg;
+  @apply mt-xs mb-xl;
 }
 
 .typo-code {
@@ -23,7 +23,7 @@
 }
 
 .typo-scale-row {
-  @apply grid gap-lg px-md py-md items-center bg-card;
+  @apply grid gap-xl px-lg py-lg items-center bg-card;
   grid-template-columns: 11rem 1fr;
 }
 
@@ -45,7 +45,7 @@
 
 /* Muted demo */
 .typo-muted-demo {
-  @apply grid grid-cols-1 sm:grid-cols-2 gap-lg p-lg rounded-xl border border-border bg-card;
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-xl p-xl rounded-xl border border-border bg-card;
 }
 
 /* Weights */
@@ -54,7 +54,7 @@
 }
 
 .typo-weight-row {
-  @apply flex items-center gap-lg px-md py-sm bg-card;
+  @apply flex items-center gap-xl px-lg py-sm bg-card;
 }
 
 .typo-weight-label {
@@ -71,7 +71,7 @@
 }
 
 .typo-mono-row {
-  @apply flex items-center gap-lg px-md py-sm bg-card;
+  @apply flex items-center gap-xl px-lg py-sm bg-card;
 }
 
 .typo-mono-row .app-caption {

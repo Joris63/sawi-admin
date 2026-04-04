@@ -20,7 +20,7 @@ const shadowTokens = [
       niet voor decoratie.
     </SwBody>
 
-    <hr class="shadow-divider mt-xl mb-xl" />
+    <hr class="shadow-divider mt-2xl mb-2xl" />
 
     <div class="shadow-grid">
       <div

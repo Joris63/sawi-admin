@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 export interface PropRow {
   name: string
   type: string
@@ -6,12 +8,27 @@ export interface PropRow {
   description: string
 }
 
-defineProps<{ rows: PropRow[] }>()
+const props = withDefaults(
+  defineProps<{
+    rows: PropRow[]
+    collapsible?: boolean
+  }>(),
+  {
+    collapsible: false,
+  },
+)
+
+const open = ref(false)
 </script>
 
 <template>
   <div class="props-table-wrap">
-    <table class="props-table">
+    <button v-if="collapsible" class="props-toggle" @click="open = !open">
+      <span>Props</span>
+      <i :class="['pi', open ? 'pi-chevron-up' : 'pi-chevron-down', 'props-toggle-icon']" />
+    </button>
+
+    <table v-if="!collapsible || open" class="props-table">
       <thead>
         <tr>
           <th class="props-th">Prop</th>

@@ -57,7 +57,7 @@
 }
 
 .sw-select-option {
-  @apply flex items-center gap-sm px-md py-sm text-base text-foreground
+  @apply flex items-center gap-sm px-lg py-sm text-base text-foreground
          cursor-pointer transition-colors duration-100;
 }
 

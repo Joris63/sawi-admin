@@ -60,12 +60,15 @@ const splitButtonPt = computed(() => ({
   pcMenu: {
     root: { class: 'sw-splitbtn-menu' },
     rootList: { class: 'sw-splitbtn-list' },
+    list: { class: 'sw-splitbtn-list' },
     item: { class: 'sw-splitbtn-item' },
     itemContent: { class: 'sw-splitbtn-item-content' },
     itemLink: { class: 'sw-splitbtn-item-link' },
     itemIcon: { class: 'sw-splitbtn-item-icon' },
     itemLabel: { class: 'sw-splitbtn-item-label' },
     separator: { class: 'sw-splitbtn-separator' },
+    submenu: { class: 'sw-splitbtn-submenu' },
+    submenuIcon: { class: ['pi', 'pi-chevron-right', 'sw-splitbtn-submenu-icon'] },
   },
 }))
 </script>

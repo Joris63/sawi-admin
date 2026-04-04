@@ -1,13 +1,5 @@
 <script setup lang="ts">
-import {
-  SwH1,
-  SwH2,
-  SwH3,
-  SwH4,
-  SwBody,
-  SwSmall,
-  SwCaption,
-} from '@/components/ui/typography'
+import { SwH1, SwH2, SwH3, SwH4, SwBody, SwSmall, SwCaption } from '@/components/ui/typography'
 import { useCopy } from '@/composables/useCopy'
 
 const { copied, copy } = useCopy()
@@ -88,7 +80,7 @@ const weights = [
       componenten — nooit losse font-klassen.
     </SwBody>
 
-    <hr class="typo-divider mt-xl mb-xl" />
+    <hr class="typo-divider mt-2xl mb-2xl" />
 
     <!-- Type scale -->
     <SwH3 class="typo-section-title">Schaal</SwH3>
@@ -117,7 +109,7 @@ const weights = [
       </div>
     </div>
 
-    <hr class="typo-divider mt-2xl mb-xl" />
+    <hr class="typo-divider mt-3xl mb-2xl" />
 
     <!-- Muted variant -->
     <SwH3 class="typo-section-title">Muted variant</SwH3>
@@ -137,7 +129,7 @@ const weights = [
       </div>
     </div>
 
-    <hr class="typo-divider mt-2xl mb-xl" />
+    <hr class="typo-divider mt-3xl mb-2xl" />
 
     <!-- Font weights -->
     <SwH3 class="typo-section-title">Gewichten</SwH3>
@@ -153,7 +145,7 @@ const weights = [
       </div>
     </div>
 
-    <hr class="typo-divider mt-2xl mb-xl" />
+    <hr class="typo-divider mt-3xl mb-2xl" />
 
     <!-- Monospace -->
     <SwH3 class="typo-section-title">Monospace</SwH3>

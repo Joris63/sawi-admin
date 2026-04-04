@@ -18,11 +18,12 @@ const selectedPrefix = ref('p')
 const tokens = [
   { name: 'xs', rem: '0.25rem', px: 4 },
   { name: 'sm', rem: '0.5rem', px: 8 },
-  { name: 'md', rem: '1rem', px: 16 },
-  { name: 'lg', rem: '1.5rem', px: 24 },
-  { name: 'xl', rem: '2rem', px: 32 },
-  { name: '2xl', rem: '3rem', px: 48 },
-  { name: '3xl', rem: '4rem', px: 64 },
+  { name: 'md', rem: '0.75rem', px: 12 },
+  { name: 'lg', rem: '1rem', px: 16 },
+  { name: 'xl', rem: '1.5rem', px: 24 },
+  { name: '2xl', rem: '2rem', px: 32 },
+  { name: '3xl', rem: '3rem', px: 48 },
+  { name: '4xl', rem: '4rem', px: 64 },
 ]
 </script>
 
@@ -30,12 +31,12 @@ const tokens = [
   <section id="spacing">
     <SwH2>Spatiëring</SwH2>
     <SwBody muted class="spacing-intro">
-      Zeven benoemde tokens voor alle witruimte in de interface. Gebruik altijd een token — geen
+      Acht benoemde tokens voor alle witruimte in de interface. Gebruik altijd een token — geen
       arbitrary waarden zoals <code class="spacing-code">p-[18px]</code>.
     </SwBody>
 
     <!-- Prefix switcher -->
-    <div class="spacing-prefix-switcher mt-lg">
+    <div class="spacing-prefix-switcher mt-xl">
       <template v-for="(group, i) in prefixGroups" :key="i">
         <div v-if="i > 0" class="spacing-prefix-divider" />
         <SwButton
@@ -54,9 +55,9 @@ const tokens = [
     <!-- Token scale -->
     <SwH3>Tokens</SwH3>
     <SwSmall muted class="spacing-section-desc">
-      <code class="spacing-code">md</code> (16px) is de basiseenheid. Gebruik
-      <code class="spacing-code">xs</code>–<code class="spacing-code">sm</code> voor compacte
-      UI-elementen, <code class="spacing-code">lg</code>–<code class="spacing-code">3xl</code> voor
+      <code class="spacing-code">lg</code> (16px) is de basiseenheid. Gebruik
+      <code class="spacing-code">xs</code>–<code class="spacing-code">md</code> voor compacte
+      UI-elementen, <code class="spacing-code">xl</code>–<code class="spacing-code">4xl</code> voor
       layout en sectieafstand.
     </SwSmall>
 

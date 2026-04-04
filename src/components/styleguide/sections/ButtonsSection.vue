@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SwH2, SwH3, SwBody, SwSmall } from '@/components/ui/typography'
+import { SwH2, SwH3, SwH4, SwBody, SwSmall } from '@/components/ui/typography'
 import SwButton from '@/components/ui/SwButton.vue'
 import DemoBlock from '@/components/styleguide/DemoBlock.vue'
 import PropsTable from '@/components/styleguide/PropsTable.vue'
@@ -7,7 +7,22 @@ import type { PropRow } from '@/components/styleguide/PropsTable.vue'
 
 const splitItems = [
   { label: 'Opslaan als concept', icon: 'pi pi-file' },
-  { label: 'Exporteren', icon: 'pi pi-upload' },
+  {
+    label: 'Exporteren',
+    icon: 'pi pi-upload',
+    items: [
+      {
+        label: 'Als PDF',
+        icon: 'pi pi-file-pdf',
+        items: [
+          { label: 'Standaard', icon: 'pi pi-check' },
+          { label: 'Gecomprimeerd', icon: 'pi pi-compress' },
+        ],
+      },
+      { label: 'Als Excel', icon: 'pi pi-file-excel' },
+      { label: 'Als CSV', icon: 'pi pi-table' },
+    ],
+  },
   { separator: true },
   { label: 'Verwijderen', icon: 'pi pi-trash' },
 ]
@@ -22,6 +37,32 @@ const severities = [
 const variants = ['filled', 'outlined', 'text'] as const
 
 const basicExample = `<SwButton label="Opslaan" />`
+
+const splitExample = `<SwButton
+  label="Opslaan"
+  icon="pi pi-save"
+  :menu-items="[
+    { label: 'Opslaan als concept', icon: 'pi pi-file' },
+    {
+      label: 'Exporteren',
+      icon: 'pi pi-upload',
+      items: [
+        {
+          label: 'Als PDF',
+          icon: 'pi pi-file-pdf',
+          items: [
+            { label: 'Standaard', icon: 'pi pi-check' },
+            { label: 'Gecomprimeerd', icon: 'pi pi-compress' },
+          ],
+        },
+        { label: 'Als Excel', icon: 'pi pi-file-excel' },
+        { label: 'Als CSV', icon: 'pi pi-table' },
+      ],
+    },
+    { separator: true },
+    { label: 'Verwijderen', icon: 'pi pi-trash' },
+  ]"
+/>`
 
 const props: PropRow[] = [
   {
@@ -94,7 +135,7 @@ const props: PropRow[] = [
       intentie, variant op basis van nadruk.
     </SwBody>
 
-    <hr class="buttons-divider mt-xl mb-xl" />
+    <hr class="buttons-divider mt-2xl mb-2xl" />
 
     <!-- Basic example + props -->
     <SwH3>Gebruik</SwH3>
@@ -103,13 +144,13 @@ const props: PropRow[] = [
       <code class="buttons-code">label</code> of <code class="buttons-code">icon</code> mee.
     </SwSmall>
 
-    <DemoBlock :code="basicExample" default-open class="mb-xl">
+    <DemoBlock :code="basicExample" default-open class="mb-2xl">
       <SwButton label="Opslaan" />
     </DemoBlock>
 
-    <PropsTable :rows="props" />
+    <PropsTable :rows="props" collapsible />
 
-    <hr class="buttons-divider mt-2xl mb-xl" />
+    <hr class="buttons-divider mt-3xl mb-2xl" />
 
     <!-- Matrix -->
     <SwH3>Overzicht</SwH3>
@@ -133,7 +174,7 @@ const props: PropRow[] = [
       </div>
     </div>
 
-    <hr class="buttons-divider mt-2xl mb-xl" />
+    <hr class="buttons-divider mt-3xl mb-2xl" />
 
     <!-- Sizes -->
     <SwH3>Formaten</SwH3>
@@ -151,7 +192,7 @@ const props: PropRow[] = [
       </div>
     </DemoBlock>
 
-    <hr class="buttons-divider mt-2xl mb-xl" />
+    <hr class="buttons-divider mt-3xl mb-2xl" />
 
     <!-- Icons -->
     <SwH3>Met icoon</SwH3>
@@ -165,12 +206,7 @@ const props: PropRow[] = [
     <DemoBlock>
       <div class="buttons-row">
         <SwButton icon="pi pi-plus" icon-pos="left" label="Toevoegen" />
-        <SwButton
-          icon="pi pi-arrow-right"
-          icon-pos="right"
-          severity="secondary"
-          label="Volgende"
-        />
+        <SwButton icon="pi pi-arrow-right" icon-pos="right" severity="secondary" label="Volgende" />
         <SwButton icon="pi pi-download" severity="ghost" label="Exporteren" />
         <SwButton icon="pi pi-trash" severity="danger" label="Verwijderen" />
       </div>
@@ -199,7 +235,7 @@ const props: PropRow[] = [
       </div>
     </DemoBlock>
 
-    <hr class="buttons-divider mt-2xl mb-xl" />
+    <hr class="buttons-divider mt-3xl mb-2xl" />
 
     <!-- Split button -->
     <SwH3>Split knop</SwH3>
@@ -208,7 +244,7 @@ const props: PropRow[] = [
       renderen — de hoofdactie staat links, gerelateerde acties in het dropdown menu.
     </SwSmall>
 
-    <DemoBlock>
+    <DemoBlock :code="splitExample">
       <div class="buttons-row">
         <SwButton
           v-for="s in severities"
@@ -221,7 +257,7 @@ const props: PropRow[] = [
       </div>
     </DemoBlock>
 
-    <hr class="buttons-divider mt-2xl mb-xl" />
+    <hr class="buttons-divider mt-3xl mb-2xl" />
 
     <!-- States -->
     <SwH3>Staten</SwH3>
