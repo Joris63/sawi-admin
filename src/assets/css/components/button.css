@@ -18,7 +18,7 @@
   @apply text-base px-lg py-sm rounded-md;
 }
 .sw-btn--lg {
-  @apply text-lg  px-xl py-sm rounded-md;
+  @apply text-lg  px-xl py-md rounded-md;
 }
 
 /* ── PRIMARY ───────────────────────────────────────────────────────────────── */
@@ -62,20 +62,20 @@
 
 .sw-btn--secondary.sw-btn--filled {
   @apply bg-secondary-400 border-secondary-400 text-white;
-  @apply dark:bg-secondary-300 dark:border-secondary-300 dark:text-secondary-950;
+  @apply dark:bg-secondary-600 dark:border-secondary-600 dark:text-white;
 }
 .sw-btn--secondary.sw-btn--filled:hover:not(:disabled) {
   @apply bg-secondary-500 border-secondary-500;
-  @apply dark:bg-secondary-200 dark:border-secondary-200;
+  @apply dark:bg-secondary-500 dark:border-secondary-500;
 }
 .sw-btn--secondary.sw-btn--filled:active:not(:disabled) {
   @apply bg-secondary-600 border-secondary-600;
-  @apply dark:bg-secondary-400 dark:border-secondary-400;
+  @apply dark:bg-secondary-700 dark:border-secondary-700;
 }
 
 .sw-btn--secondary.sw-btn--outlined {
   @apply bg-transparent border-secondary-400 text-secondary-600;
-  @apply dark:border-secondary-300 dark:text-secondary-300;
+  @apply dark:border-secondary-400 dark:text-secondary-400;
 }
 .sw-btn--secondary.sw-btn--outlined:hover:not(:disabled) {
   @apply bg-secondary-50 dark:bg-secondary-950;
@@ -86,7 +86,7 @@
 
 .sw-btn--secondary.sw-btn--text {
   @apply bg-transparent border-transparent text-secondary-600;
-  @apply dark:text-secondary-300;
+  @apply dark:text-secondary-400;
 }
 .sw-btn--secondary.sw-btn--text:hover:not(:disabled) {
   @apply bg-secondary-50 dark:bg-secondary-950;
@@ -278,3 +278,7 @@
   font-size: 1em;
   line-height: 1;
 }
+
+.sw-btn--sm .sw-btn-icon { font-size: 0.875rem; } /* 14px */
+.sw-btn--md .sw-btn-icon { font-size: 1.125rem; } /* 18px */
+.sw-btn--lg .sw-btn-icon { font-size: 1.375rem; } /* 22px */

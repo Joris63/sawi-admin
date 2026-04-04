@@ -21,19 +21,19 @@
   @apply border-border-strong;
 }
 .sw-input-field:focus {
-  @apply border-primary-500 ring-2 ring-primary-500/15;
+  @apply border-primary-500 ring-2 ring-primary-500/15 dark:border-primary-400 dark:ring-primary-400/25;
 }
 .sw-input-field:disabled {
   @apply opacity-50 cursor-not-allowed bg-muted;
 }
 .sw-input-field--invalid {
-  @apply border-danger-500;
+  @apply border-danger-500 dark:border-danger-400;
 }
 .sw-input-field--invalid:hover:not(:disabled):not(:focus) {
-  @apply border-danger-700;
+  @apply border-danger-600 dark:border-danger-300;
 }
 .sw-input-field--invalid:focus {
-  @apply border-danger-500 ring-2 ring-danger-500/15;
+  @apply border-danger-500 ring-2 ring-danger-500/15 dark:border-danger-400 dark:ring-danger-400/25;
 }
 
 /* Grouped variant (tel/vat — connects to the country select) */
