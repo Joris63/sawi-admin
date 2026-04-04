@@ -26,21 +26,21 @@ const emit = defineEmits<{
 const isOpen = ref(false)
 
 const pt = {
-  root: { class: 'app-select' },
-  label: { class: 'app-select-label' },
-  dropdown: { class: 'app-select-dropdown' },
-  overlay: { class: 'app-select-overlay' },
-  listContainer: { class: 'app-select-list-wrap' },
-  list: { class: 'app-select-list' },
+  root: { class: 'sw-select' },
+  label: { class: 'sw-select-label' },
+  dropdown: { class: 'sw-select-dropdown' },
+  overlay: { class: 'sw-select-overlay' },
+  listContainer: { class: 'sw-select-list-wrap' },
+  list: { class: 'sw-select-list' },
   option: ({ context }: any) => ({
-    class: ['app-select-option', { 'app-select-option--selected': context.selected }],
+    class: ['sw-select-option', { 'sw-select-option--selected': context.selected }],
   }),
 }
 </script>
 
 <template>
-  <div class="app-input-wrap">
-    <label v-if="label" class="app-input-label">{{ label }}</label>
+  <div class="sw-input-wrap">
+    <label v-if="label" class="sw-input-label">{{ label }}</label>
 
     <Select
       :model-value="modelValue"
@@ -57,7 +57,7 @@ const pt = {
       @update:model-value="emit('update:modelValue', $event)"
     >
       <template #dropdownicon>
-        <i :class="['pi', isOpen ? 'pi-chevron-up' : 'pi-chevron-down', 'app-select-chevron']" />
+        <i :class="['pi', isOpen ? 'pi-chevron-up' : 'pi-chevron-down', 'sw-select-chevron']" />
       </template>
 
       <template v-if="$slots.value" #value="slotProps">
@@ -69,6 +69,6 @@ const pt = {
       </template>
     </Select>
 
-    <small v-if="helpText" class="app-input-help">{{ helpText }}</small>
+    <small v-if="helpText" class="sw-input-help">{{ helpText }}</small>
   </div>
 </template>

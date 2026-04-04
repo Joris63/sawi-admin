@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {
-  AppH1,
-  AppH2,
-  AppH3,
-  AppH4,
-  AppBody,
-  AppSmall,
-  AppCaption,
+  SwH1,
+  SwH2,
+  SwH3,
+  SwH4,
+  SwBody,
+  SwSmall,
+  SwCaption,
 } from '@/components/ui/typography'
 import { useCopy } from '@/composables/useCopy'
 
@@ -14,56 +14,56 @@ const { copied, copy } = useCopy()
 
 const scale = [
   {
-    component: AppH1,
-    label: 'AppH1',
+    component: SwH1,
+    label: 'SwH1',
     tag: 'h1',
     size: '28px',
     weight: 'Bold',
     sample: 'Klantbeheer',
   },
   {
-    component: AppH2,
-    label: 'AppH2',
+    component: SwH2,
+    label: 'SwH2',
     tag: 'h2',
     size: '24px',
     weight: 'Bold',
     sample: 'Verkoopoverzicht',
   },
   {
-    component: AppH3,
-    label: 'AppH3',
+    component: SwH3,
+    label: 'SwH3',
     tag: 'h3',
     size: '20px',
     weight: 'Semibold',
     sample: 'Factuurgegevens',
   },
   {
-    component: AppH4,
-    label: 'AppH4',
+    component: SwH4,
+    label: 'SwH4',
     tag: 'h4',
     size: '16px',
     weight: 'Semibold',
     sample: 'Verzendadres',
   },
   {
-    component: AppBody,
-    label: 'AppBody',
+    component: SwBody,
+    label: 'SwBody',
     tag: 'p',
     size: '14px',
     weight: 'Regular',
     sample: 'De klant heeft drie openstaande bestellingen die nog verwerkt moeten worden.',
   },
   {
-    component: AppSmall,
-    label: 'AppSmall',
+    component: SwSmall,
+    label: 'SwSmall',
     tag: 'p',
     size: '12px',
     weight: 'Regular',
     sample: 'Laatste wijziging op 14 maart 2025 door Joris Kamminga.',
   },
   {
-    component: AppCaption,
-    label: 'AppCaption',
+    component: SwCaption,
+    label: 'SwCaption',
     tag: 'span',
     size: '11px',
     weight: 'Medium',
@@ -82,21 +82,21 @@ const weights = [
 
 <template>
   <section id="typography">
-    <AppH2>Typografie</AppH2>
-    <AppBody muted class="typo-intro">
+    <SwH2>Typografie</SwH2>
+    <SwBody muted class="typo-intro">
       Geist voor interface-tekst, Geist Mono voor code en waarden. Gebruik altijd de geleverde
       componenten — nooit losse font-klassen.
-    </AppBody>
+    </SwBody>
 
     <hr class="typo-divider mt-xl mb-xl" />
 
     <!-- Type scale -->
-    <AppH3 class="typo-section-title">Schaal</AppH3>
-    <AppSmall muted class="typo-section-desc">
+    <SwH3 class="typo-section-title">Schaal</SwH3>
+    <SwSmall muted class="typo-section-desc">
       Elk niveau heeft een vaste rol — wissel niet van niveau voor visueel effect. Gebruik het
       <code class="typo-code">as</code>-prop om het HTML-element te overschrijven zonder de stijl te
       veranderen.
-    </AppSmall>
+    </SwSmall>
 
     <div class="typo-scale">
       <div
@@ -120,35 +120,35 @@ const weights = [
     <hr class="typo-divider mt-2xl mb-xl" />
 
     <!-- Muted variant -->
-    <AppH3 class="typo-section-title">Muted variant</AppH3>
-    <AppSmall muted class="typo-section-desc">
+    <SwH3 class="typo-section-title">Muted variant</SwH3>
+    <SwSmall muted class="typo-section-desc">
       Voeg <code class="typo-code">muted</code> toe voor ondersteunende tekst: labels,
       omschrijvingen en tijdstempels. Gebruik het niet voor primaire inhoud.
-    </AppSmall>
+    </SwSmall>
 
     <div class="typo-muted-demo">
       <div>
-        <AppH3>Standaard kleur</AppH3>
-        <AppBody>Primaire tekst voor hoofdinhoud en titels.</AppBody>
+        <SwH3>Standaard kleur</SwH3>
+        <SwBody>Primaire tekst voor hoofdinhoud en titels.</SwBody>
       </div>
       <div>
-        <AppH3 muted>Muted kleur</AppH3>
-        <AppBody muted>Secundaire tekst voor omschrijvingen en labels.</AppBody>
+        <SwH3 muted>Muted kleur</SwH3>
+        <SwBody muted>Secundaire tekst voor omschrijvingen en labels.</SwBody>
       </div>
     </div>
 
     <hr class="typo-divider mt-2xl mb-xl" />
 
     <!-- Font weights -->
-    <AppH3 class="typo-section-title">Gewichten</AppH3>
-    <AppSmall muted class="typo-section-desc">
+    <SwH3 class="typo-section-title">Gewichten</SwH3>
+    <SwSmall muted class="typo-section-desc">
       Regular voor lopende tekst, Medium voor labels, Semibold voor koppen, Bold voor paginatitels.
       Vermijd Light in de interface — te weinig contrast op kleine formaten.
-    </AppSmall>
+    </SwSmall>
 
     <div class="typo-weights">
       <div v-for="w in weights" :key="w.label" class="typo-weight-row">
-        <AppCaption class="typo-weight-label">{{ w.label }} · {{ w.value }}</AppCaption>
+        <SwCaption class="typo-weight-label">{{ w.label }} · {{ w.value }}</SwCaption>
         <span class="typo-weight-sample" :class="w.class">Sawiday Admin Interface</span>
       </div>
     </div>
@@ -156,24 +156,24 @@ const weights = [
     <hr class="typo-divider mt-2xl mb-xl" />
 
     <!-- Monospace -->
-    <AppH3 class="typo-section-title">Monospace</AppH3>
-    <AppSmall muted class="typo-section-desc">
+    <SwH3 class="typo-section-title">Monospace</SwH3>
+    <SwSmall muted class="typo-section-desc">
       Gebruik <code class="typo-code">&lt;code&gt;</code> of
       <code class="typo-code">font-mono</code> voor ID's, orderreferenties, kleurwaarden en
       technische data in tabellen.
-    </AppSmall>
+    </SwSmall>
 
     <div class="typo-mono-demo">
       <div class="typo-mono-row">
-        <AppCaption>Kleurwaarde</AppCaption>
+        <SwCaption>Kleurwaarde</SwCaption>
         <code class="typo-mono-value">#004050</code>
       </div>
       <div class="typo-mono-row">
-        <AppCaption>Bestel-ID</AppCaption>
+        <SwCaption>Bestel-ID</SwCaption>
         <code class="typo-mono-value">ORD-20250314-0042</code>
       </div>
       <div class="typo-mono-row">
-        <AppCaption>CSS klasse</AppCaption>
+        <SwCaption>CSS klasse</SwCaption>
         <code class="typo-mono-value">bg-primary-800</code>
       </div>
     </div>

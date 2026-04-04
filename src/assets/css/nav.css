@@ -1,44 +1,44 @@
 /* ── Vertical navigation ──────────────────────────────────────────────────── */
 
-.app-nav {
+.sw-nav {
   @apply w-nav shrink-0 pt-sm pb-md;
 }
 
-.app-nav-group-label {
+.sw-nav-group-label {
   @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground pt-md px-lg pb-xs;
 }
 
-.app-nav-btn {
+.sw-nav-btn {
   @apply w-full! justify-start! gap-sm! py-sm! pr-md! pl-md! rounded-none! border-0! border-l! border-l-transparent! text-base! font-normal! text-foreground!;
   border-left-style: solid !important;
 }
 
-.app-nav-btn .p-button-icon {
+.sw-nav-btn .p-button-icon {
   @apply text-base w-md text-center opacity-70;
 }
 
-.app-nav-btn--active {
+.sw-nav-btn--active {
   @apply text-primary-700! font-medium! bg-primary-100! border-l-primary-500! dark:bg-primary-950! dark:text-primary-400!;
 }
 
-.app-nav-btn--active .p-button-icon {
+.sw-nav-btn--active .p-button-icon {
   @apply opacity-100;
 }
 
-.app-nav-item-label {
+.sw-nav-item-label {
   @apply text-left text-base;
 }
 
-.app-nav-group-toggle {
+.sw-nav-group-toggle {
   @apply w-full flex items-center justify-between text-xs font-semibold uppercase tracking-wider
          text-muted-foreground pt-md px-lg pb-sm cursor-pointer select-none
          hover:text-foreground transition-colors;
 }
 
-.app-nav-group-chevron {
+.sw-nav-group-chevron {
   @apply text-xs transition-transform duration-200;
 }
 
-.app-nav-group-chevron--open {
+.sw-nav-group-chevron--open {
   @apply rotate-180;
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import { AppH2, AppH3, AppSmall, AppBody } from '@/components/ui/typography'
-import AppButton from '@/components/ui/AppButton.vue'
+import { SwH2, SwH3, SwSmall, SwBody } from '@/components/ui/typography'
+import SwButton from '@/components/ui/SwButton.vue'
 import { useCopy } from '@/composables/useCopy'
 
 const isDark = ref(document.documentElement.classList.contains('dark'))
@@ -243,15 +243,15 @@ const colsClass: Record<number, string> = {
 
 <template>
   <section id="colors">
-    <AppH2>Kleuren</AppH2>
-    <AppBody muted class="colors-intro">
+    <SwH2>Kleuren</SwH2>
+    <SwBody muted class="colors-intro">
       Tonale kleurenschalen gebouwd op merkbasis. Selecteer een prefix en klik op een swatch om de
       klasse te kopiëren.
-    </AppBody>
+    </SwBody>
 
     <!-- Prefix switcher -->
     <div class="prefix-switcher mt-lg">
-      <AppButton
+      <SwButton
         v-for="p in prefixes"
         :key="p"
         :severity="selectedPrefix === p ? 'primary' : 'ghost'"
@@ -265,8 +265,8 @@ const colsClass: Record<number, string> = {
 
     <div class="palette-groups">
       <div v-for="group in groups" :key="group.label">
-        <AppH3>{{ group.label }}</AppH3>
-        <AppSmall muted class="palette-group-desc">{{ group.description }}</AppSmall>
+        <SwH3>{{ group.label }}</SwH3>
+        <SwSmall muted class="palette-group-desc">{{ group.description }}</SwSmall>
 
         <div class="palette-grid" :class="colsClass[group.cols]">
           <div v-for="palette in group.items" :key="palette.key">
@@ -320,11 +320,11 @@ const colsClass: Record<number, string> = {
 
     <!-- ── Usage ─────────────────────────────────────────────────────────── -->
     <div>
-      <AppH3>Kleuren gebruiken</AppH3>
-      <AppSmall muted class="usage-intro">
+      <SwH3>Kleuren gebruiken</SwH3>
+      <SwSmall muted class="usage-intro">
         Elke paletkleur is bruikbaar met de onderstaande prefixen. Kies een prefix en klik op een
         rij om de klasse te kopiëren.
-      </AppSmall>
+      </SwSmall>
 
       <!-- Class pattern -->
       <div class="class-pattern">

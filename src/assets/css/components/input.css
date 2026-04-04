@@ -1,52 +1,52 @@
 /* ── Input wrapper ──────────────────────────────────────────────────────────── */
 
-.app-input-wrap {
+.sw-input-wrap {
   @apply flex flex-col gap-xs w-full;
 }
-.app-input-label {
+.sw-input-label {
   @apply text-base font-medium text-foreground;
 }
-.app-input-help {
+.sw-input-help {
   @apply text-sm text-muted-foreground;
 }
 
 /* ── Base input field ───────────────────────────────────────────────────────── */
 
-.app-input-field {
+.sw-input-field {
   @apply w-full px-sm py-sm border border-border rounded-md bg-card text-foreground text-base
          placeholder:text-muted-foreground outline-none transition-colors duration-150;
 }
 
-.app-input-field:hover:not(:disabled):not(:focus) {
+.sw-input-field:hover:not(:disabled):not(:focus) {
   @apply border-border-strong;
 }
-.app-input-field:focus {
+.sw-input-field:focus {
   @apply border-primary-500 ring-2 ring-primary-500/15;
 }
-.app-input-field:disabled {
+.sw-input-field:disabled {
   @apply opacity-50 cursor-not-allowed bg-muted;
 }
-.app-input-field--invalid {
+.sw-input-field--invalid {
   @apply border-danger-500;
 }
-.app-input-field--invalid:focus {
+.sw-input-field--invalid:focus {
   @apply border-danger-500 ring-danger-500/15;
 }
 
 /* Grouped variant (tel/vat — connects to the country select) */
-.app-input-field--grouped {
+.sw-input-field--grouped {
   @apply rounded-l-none border-l-0 flex-1;
 }
 
 /* ── Input group ────────────────────────────────────────────────────────────── */
 
-.app-input-group {
+.sw-input-group {
   @apply flex w-full;
 }
 
 /* ── Country select ─────────────────────────────────────────────────────────── */
 
-.app-country-select {
+.sw-country-select {
   @apply px-sm py-sm border border-border rounded-l-md
          bg-card cursor-pointer shrink-0
          transition-colors duration-150;
@@ -58,26 +58,26 @@
   box-shadow: none !important;
 }
 
-.app-country-select:hover:not([data-p-focused='true']):not([data-p-open='true']) {
+.sw-country-select:hover:not([data-p-focused='true']):not([data-p-open='true']) {
   @apply border-border-strong;
 }
 
-.app-country-select:focus,
-.app-country-select:focus-visible,
-.app-country-select[data-p-focused='true'],
-.app-country-select[data-p-open='true'] {
+.sw-country-select:focus,
+.sw-country-select:focus-visible,
+.sw-country-select[data-p-focused='true'],
+.sw-country-select[data-p-open='true'] {
   outline: none !important;
   box-shadow: none !important;
 }
 
-.app-country-select-label {
+.sw-country-select-label {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
   line-height: 1;
 }
 
-.app-country-select-arrow {
+.sw-country-select-arrow {
   @apply text-muted-foreground;
   font-size: 0.65rem;
   line-height: 1;
@@ -86,49 +86,49 @@
   transition: transform 150ms ease;
 }
 
-.app-country-flag {
+.sw-country-flag {
   display: inline-block;
   width: 1.25rem;
   height: 0.9375rem;
   flex-shrink: 0;
 }
 
-.app-country-code {
+.sw-country-code {
   @apply text-base font-medium text-foreground;
 }
 
 /* ── Country dropdown overlay ───────────────────────────────────────────────── */
 
-.app-country-overlay {
+.sw-country-overlay {
   @apply bg-card border border-border rounded-lg shadow-lg py-xs overflow-hidden;
   min-width: 14rem;
   z-index: 1000;
   margin-top: var(--spacing-xs);
 }
 
-.app-country-list-wrap {
+.sw-country-list-wrap {
   @apply overflow-y-auto max-h-64;
 }
 
-.app-country-list {
+.sw-country-list {
   @apply m-0 p-0 list-none;
 }
 
-.app-country-option {
+.sw-country-option {
   @apply flex items-center gap-sm px-md py-sm text-base text-foreground
          cursor-pointer transition-colors duration-100;
 }
 
-.app-country-option:hover {
+.sw-country-option:hover {
   @apply bg-muted;
 }
-.app-country-option--selected {
+.sw-country-option--selected {
   @apply bg-primary-50 text-primary-700 dark:bg-primary-950 dark:text-primary-300;
 }
-.app-country-option--selected:hover {
+.sw-country-option--selected:hover {
   @apply bg-primary-100 dark:bg-primary-900;
 }
 
-.app-country-option-code {
+.sw-country-option-code {
   @apply text-sm text-muted-foreground ml-auto;
 }

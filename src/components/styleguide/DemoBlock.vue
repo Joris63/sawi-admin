@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import AppButton from '@/components/ui/AppButton.vue'
+import SwButton from '@/components/ui/SwButton.vue'
 import hljs from 'highlight.js/lib/core'
 import xml from 'highlight.js/lib/languages/xml'
 import 'highlight.js/styles/github-dark.min.css'
@@ -39,7 +39,7 @@ function copyCode(code: string) {
     </div>
     <template v-if="code">
       <div class="demo-toolbar">
-        <AppButton
+        <SwButton
           severity="ghost"
           variant="text"
           size="sm"
@@ -47,7 +47,7 @@ function copyCode(code: string) {
           :aria-label="showCode ? 'Verberg code' : 'Toon code'"
           @click="showCode = !showCode"
         />
-        <AppButton
+        <SwButton
           severity="ghost"
           variant="text"
           size="sm"

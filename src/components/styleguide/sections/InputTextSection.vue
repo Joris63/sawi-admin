@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { AppH2, AppH3, AppBody, AppSmall } from '@/components/ui/typography'
-import AppInput from '@/components/ui/AppInput.vue'
+import { SwH2, SwH3, SwBody, SwSmall } from '@/components/ui/typography'
+import SwInputText from '@/components/ui/input-text/SwInputText.vue'
 import DemoBlock from '@/components/styleguide/DemoBlock.vue'
 import PropsTable from '@/components/styleguide/PropsTable.vue'
 import type { PropRow } from '@/components/styleguide/PropsTable.vue'
@@ -12,7 +12,7 @@ const tel = ref('')
 const vat = ref('')
 const country = ref('BE')
 
-const basicExample = `<AppInput label="Naam" placeholder="Jan Janssen" />`
+const basicExample = `<SwInputText label="Naam" placeholder="Jan Janssen" />`
 
 const props: PropRow[] = [
   {
@@ -47,23 +47,23 @@ const props: PropRow[] = [
 
 <template>
   <section id="input-text">
-    <AppH2>Tekstveld</AppH2>
-    <AppBody muted class="input-section-intro">
+    <SwH2>Tekstveld</SwH2>
+    <SwBody muted class="input-section-intro">
       Één component voor alle tekstinvoer. Het type bepaalt de weergave — eenvoudig tekstveld voor
       text en email, gegroepeerde landkiezer met masker voor tel en vat.
-    </AppBody>
+    </SwBody>
 
     <hr class="input-section-divider mt-xl mb-xl" />
 
     <!-- Basic example + props -->
-    <AppH3>Gebruik</AppH3>
-    <AppSmall muted class="input-section-desc">
-      Importeer <code class="input-code">AppInput</code> en geef minimaal een
+    <SwH3>Gebruik</SwH3>
+    <SwSmall muted class="input-section-desc">
+      Importeer <code class="input-code">SwInputText</code> en geef minimaal een
       <code class="input-code">label</code> of <code class="input-code">placeholder</code> mee.
-    </AppSmall>
+    </SwSmall>
 
     <DemoBlock :code="basicExample" default-open class="mb-xl">
-      <AppInput label="Naam" placeholder="Jan Janssen" />
+      <SwInputText label="Naam" placeholder="Jan Janssen" />
     </DemoBlock>
 
     <PropsTable :rows="props" />
@@ -71,47 +71,47 @@ const props: PropRow[] = [
     <hr class="input-section-divider mt-2xl mb-xl" />
 
     <!-- Types -->
-    <AppH3>Types</AppH3>
-    <AppSmall muted class="input-section-desc">
+    <SwH3>Types</SwH3>
+    <SwSmall muted class="input-section-desc">
       Text en email zijn eenvoudige invoervelden. Tel en vat hebben een landkiezer met automatisch
       masker.
-    </AppSmall>
+    </SwSmall>
 
     <DemoBlock>
       <div class="input-section-grid">
-        <AppInput
+        <SwInputText
           v-model="text"
           type="text"
           label="Tekstveld"
           placeholder="Vrije tekst"
           help-text="Gebruik voor namen, adressen, etc."
         />
-        <AppInput
+        <SwInputText
           v-model="email"
           type="email"
           label="E-mailadres"
           placeholder="jan@sawiday.be"
           help-text="Wordt gevalideerd als e-mailadres."
         />
-        <AppInput v-model="tel" v-model:country="country" type="tel" label="Telefoonnummer" />
-        <AppInput v-model="vat" type="vat" label="BTW-nummer" />
+        <SwInputText v-model="tel" v-model:country="country" type="tel" label="Telefoonnummer" />
+        <SwInputText v-model="vat" type="vat" label="BTW-nummer" />
       </div>
     </DemoBlock>
 
     <hr class="input-section-divider mt-2xl mb-xl" />
 
     <!-- States -->
-    <AppH3>Staten</AppH3>
-    <AppSmall muted class="input-section-desc">
+    <SwH3>Staten</SwH3>
+    <SwSmall muted class="input-section-desc">
       Gebruik <code class="input-code">:disabled="true"</code> om het veld uit te schakelen en
       <code class="input-code">:invalid="true"</code> om een foutmelding aan te geven.
-    </AppSmall>
+    </SwSmall>
 
     <DemoBlock>
       <div class="input-section-grid">
-        <AppInput label="Standaard" placeholder="Vul iets in" />
-        <AppInput label="Uitgeschakeld" placeholder="Niet bewerkbaar" :disabled="true" />
-        <AppInput
+        <SwInputText label="Standaard" placeholder="Vul iets in" />
+        <SwInputText label="Uitgeschakeld" placeholder="Niet bewerkbaar" :disabled="true" />
+        <SwInputText
           label="Ongeldig"
           placeholder="Foutieve waarde"
           :invalid="true"

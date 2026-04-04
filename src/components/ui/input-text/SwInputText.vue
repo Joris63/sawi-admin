@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import InputText from 'primevue/inputtext'
-import AppInputTel from './AppInputTel.vue'
-import AppInputVat from './AppInputVat.vue'
+import SwInputTel from './SwInputTel.vue'
+import SwInputVat from './SwInputVat.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -26,10 +26,10 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="app-input-wrap">
-    <label v-if="label" class="app-input-label">{{ label }}</label>
+  <div class="sw-input-wrap">
+    <label v-if="label" class="sw-input-label">{{ label }}</label>
 
-    <AppInputTel
+    <SwInputTel
       v-if="type === 'tel'"
       :model-value="modelValue"
       :country="country"
@@ -40,7 +40,7 @@ const emit = defineEmits<{
       @update:country="emit('update:country', $event)"
     />
 
-    <AppInputVat
+    <SwInputVat
       v-else-if="type === 'vat'"
       :model-value="modelValue"
       :country="country"
@@ -59,10 +59,10 @@ const emit = defineEmits<{
       :disabled="disabled"
       :invalid="invalid"
       :unstyled="true"
-      :pt="{ root: { class: ['app-input-field', { 'app-input-field--invalid': invalid }] } }"
+      :pt="{ root: { class: ['sw-input-field', { 'sw-input-field--invalid': invalid }] } }"
       @update:model-value="emit('update:modelValue', $event ?? '')"
     />
 
-    <small v-if="helpText" class="app-input-help">{{ helpText }}</small>
+    <small v-if="helpText" class="sw-input-help">{{ helpText }}</small>
   </div>
 </template>

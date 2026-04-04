@@ -30,42 +30,42 @@ const isDisabled = computed(() => props.disabled || props.loading)
 const iconOnly = computed(() => !!props.icon && !props.label)
 
 const btnClasses = computed(() => [
-  'app-btn',
-  `app-btn--${props.severity}`,
-  `app-btn--${props.size}`,
-  `app-btn--${props.variant}`,
-  props.rounded ? 'app-btn--rounded' : '',
-  iconOnly.value ? 'app-btn--icon-only' : '',
+  'sw-btn',
+  `sw-btn--${props.severity}`,
+  `sw-btn--${props.size}`,
+  `sw-btn--${props.variant}`,
+  props.rounded ? 'sw-btn--rounded' : '',
+  iconOnly.value ? 'sw-btn--icon-only' : '',
 ])
 
 const buttonPt = computed(() => ({
   root: { class: btnClasses.value },
-  label: { class: 'app-btn-label' },
-  icon: { class: 'app-btn-icon' },
-  loadingIcon: { class: 'app-btn-icon' },
+  label: { class: 'sw-btn-label' },
+  icon: { class: 'sw-btn-icon' },
+  loadingIcon: { class: 'sw-btn-icon' },
 }))
 
 const splitButtonPt = computed(() => ({
-  root: { class: 'app-splitbtn' },
+  root: { class: 'sw-splitbtn' },
   pcButton: {
-    root: { class: [...btnClasses.value, 'app-splitbtn-main'] },
-    label: { class: 'app-btn-label' },
-    icon: { class: 'app-btn-icon' },
-    loadingIcon: { class: 'app-btn-icon' },
+    root: { class: [...btnClasses.value, 'sw-splitbtn-main'] },
+    label: { class: 'sw-btn-label' },
+    icon: { class: 'sw-btn-icon' },
+    loadingIcon: { class: 'sw-btn-icon' },
   },
   pcDropdown: {
-    root: { class: [...btnClasses.value, 'app-splitbtn-dropdown'] },
-    icon: { class: 'app-btn-icon' },
+    root: { class: [...btnClasses.value, 'sw-splitbtn-dropdown'] },
+    icon: { class: 'sw-btn-icon' },
   },
   pcMenu: {
-    root: { class: 'app-splitbtn-menu' },
-    rootList: { class: 'app-splitbtn-list' },
-    item: { class: 'app-splitbtn-item' },
-    itemContent: { class: 'app-splitbtn-item-content' },
-    itemLink: { class: 'app-splitbtn-item-link' },
-    itemIcon: { class: 'app-splitbtn-item-icon' },
-    itemLabel: { class: 'app-splitbtn-item-label' },
-    separator: { class: 'app-splitbtn-separator' },
+    root: { class: 'sw-splitbtn-menu' },
+    rootList: { class: 'sw-splitbtn-list' },
+    item: { class: 'sw-splitbtn-item' },
+    itemContent: { class: 'sw-splitbtn-item-content' },
+    itemLink: { class: 'sw-splitbtn-item-link' },
+    itemIcon: { class: 'sw-splitbtn-item-icon' },
+    itemLabel: { class: 'sw-splitbtn-item-label' },
+    separator: { class: 'sw-splitbtn-separator' },
   },
 }))
 </script>

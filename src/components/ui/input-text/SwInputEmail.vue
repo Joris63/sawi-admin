@@ -53,12 +53,12 @@ function onComplete({ query }: { query: string }) {
 const pt = {
   root: { class: 'w-full' },
   pcInputText: {
-    root: { class: ['app-input-field', { 'app-input-field--invalid': props.invalid }] },
+    root: { class: ['sw-input-field', { 'sw-input-field--invalid': props.invalid }] },
   },
-  overlay: { class: 'app-select-overlay' },
-  listContainer: { class: 'app-select-list-wrap' },
-  list: { class: 'app-select-list' },
-  option: { class: 'app-select-option' },
+  overlay: { class: 'sw-select-overlay' },
+  listContainer: { class: 'sw-select-list-wrap' },
+  list: { class: 'sw-select-list' },
+  option: { class: 'sw-select-option' },
 }
 </script>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppH2, AppBody } from '@/components/ui/typography'
+import { SwH2, SwBody } from '@/components/ui/typography'
 import { useCopy } from '@/composables/useCopy'
 
 const { copied, copy } = useCopy()
@@ -14,11 +14,11 @@ const shadowTokens = [
 
 <template>
   <section id="shadow">
-    <AppH2>Schaduw</AppH2>
-    <AppBody muted class="shadow-intro">
+    <SwH2>Schaduw</SwH2>
+    <SwBody muted class="shadow-intro">
       Vier elevatieniveaus voor drijvende en interactieve elementen. Gebruik schaduw spaarzaam —
       niet voor decoratie.
-    </AppBody>
+    </SwBody>
 
     <hr class="shadow-divider mt-xl mb-xl" />
 

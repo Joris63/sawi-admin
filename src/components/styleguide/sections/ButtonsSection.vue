@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { AppH2, AppH3, AppBody, AppSmall } from '@/components/ui/typography'
-import AppButton from '@/components/ui/AppButton.vue'
+import { SwH2, SwH3, SwBody, SwSmall } from '@/components/ui/typography'
+import SwButton from '@/components/ui/SwButton.vue'
 import DemoBlock from '@/components/styleguide/DemoBlock.vue'
 import PropsTable from '@/components/styleguide/PropsTable.vue'
 import type { PropRow } from '@/components/styleguide/PropsTable.vue'
@@ -21,7 +21,7 @@ const severities = [
 
 const variants = ['filled', 'outlined', 'text'] as const
 
-const basicExample = `<AppButton label="Opslaan" />`
+const basicExample = `<SwButton label="Opslaan" />`
 
 const props: PropRow[] = [
   {
@@ -88,23 +88,23 @@ const props: PropRow[] = [
 
 <template>
   <section id="buttons">
-    <AppH2>Knoppen</AppH2>
-    <AppBody muted class="buttons-intro">
+    <SwH2>Knoppen</SwH2>
+    <SwBody muted class="buttons-intro">
       Vier severities, elk beschikbaar als filled, outlined en text. Kies severity op basis van
       intentie, variant op basis van nadruk.
-    </AppBody>
+    </SwBody>
 
     <hr class="buttons-divider mt-xl mb-xl" />
 
     <!-- Basic example + props -->
-    <AppH3>Gebruik</AppH3>
-    <AppSmall muted class="buttons-section-desc">
-      Importeer <code class="buttons-code">AppButton</code> en geef minimaal een
+    <SwH3>Gebruik</SwH3>
+    <SwSmall muted class="buttons-section-desc">
+      Importeer <code class="buttons-code">SwButton</code> en geef minimaal een
       <code class="buttons-code">label</code> of <code class="buttons-code">icon</code> mee.
-    </AppSmall>
+    </SwSmall>
 
     <DemoBlock :code="basicExample" default-open class="mb-xl">
-      <AppButton label="Opslaan" />
+      <SwButton label="Opslaan" />
     </DemoBlock>
 
     <PropsTable :rows="props" />
@@ -112,23 +112,23 @@ const props: PropRow[] = [
     <hr class="buttons-divider mt-2xl mb-xl" />
 
     <!-- Matrix -->
-    <AppH3>Overzicht</AppH3>
-    <AppSmall muted class="buttons-section-desc">
+    <SwH3>Overzicht</SwH3>
+    <SwSmall muted class="buttons-section-desc">
       Primary voor de hoofdactie per pagina. Secondary voor ondersteunende merkacties. Ghost voor
       tertiaire acties. Danger voor onomkeerbare acties.
-    </AppSmall>
+    </SwSmall>
 
     <div class="buttons-matrix">
       <div class="buttons-matrix-header">
         <span />
-        <AppSmall v-for="v in variants" :key="v" muted class="buttons-matrix-col-label">{{
+        <SwSmall v-for="v in variants" :key="v" muted class="buttons-matrix-col-label">{{
           v
-        }}</AppSmall>
+        }}</SwSmall>
       </div>
       <div v-for="s in severities" :key="s.value" class="buttons-matrix-row">
-        <AppSmall muted class="buttons-matrix-row-label">{{ s.label }}</AppSmall>
+        <SwSmall muted class="buttons-matrix-row-label">{{ s.label }}</SwSmall>
         <div v-for="v in variants" :key="v" class="buttons-matrix-cell">
-          <AppButton :severity="s.value" :variant="v" :label="s.label" />
+          <SwButton :severity="s.value" :variant="v" :label="s.label" />
         </div>
       </div>
     </div>
@@ -136,47 +136,47 @@ const props: PropRow[] = [
     <hr class="buttons-divider mt-2xl mb-xl" />
 
     <!-- Sizes -->
-    <AppH3>Formaten</AppH3>
-    <AppSmall muted class="buttons-section-desc">
+    <SwH3>Formaten</SwH3>
+    <SwSmall muted class="buttons-section-desc">
       Gebruik <code class="buttons-code">md</code> als standaard.
       <code class="buttons-code">sm</code> voor compacte UI zoals tabellen en toolbars,
       <code class="buttons-code">lg</code> voor prominente call-to-actions.
-    </AppSmall>
+    </SwSmall>
 
     <DemoBlock>
       <div class="buttons-row buttons-row--baseline">
-        <AppButton size="sm" label="Small" />
-        <AppButton size="md" label="Medium" />
-        <AppButton size="lg" label="Large" />
+        <SwButton size="sm" label="Small" />
+        <SwButton size="md" label="Medium" />
+        <SwButton size="lg" label="Large" />
       </div>
     </DemoBlock>
 
     <hr class="buttons-divider mt-2xl mb-xl" />
 
     <!-- Icons -->
-    <AppH3>Met icoon</AppH3>
-    <AppSmall muted class="buttons-section-desc">
+    <SwH3>Met icoon</SwH3>
+    <SwSmall muted class="buttons-section-desc">
       Gebruik <code class="buttons-code">icon</code> +
       <code class="buttons-code">icon-pos</code> voor iconen. Geef een icon-only knop altijd een
       <code class="buttons-code">aria-label</code> voor toegankelijkheid. Gebruik
       <code class="buttons-code">rounded</code> voor circulaire icon-only knoppen.
-    </AppSmall>
+    </SwSmall>
 
     <DemoBlock>
       <div class="buttons-row">
-        <AppButton icon="pi pi-plus" icon-pos="left" label="Toevoegen" />
-        <AppButton
+        <SwButton icon="pi pi-plus" icon-pos="left" label="Toevoegen" />
+        <SwButton
           icon="pi pi-arrow-right"
           icon-pos="right"
           severity="secondary"
           label="Volgende"
         />
-        <AppButton icon="pi pi-download" severity="ghost" label="Exporteren" />
-        <AppButton icon="pi pi-trash" severity="danger" label="Verwijderen" />
+        <SwButton icon="pi pi-download" severity="ghost" label="Exporteren" />
+        <SwButton icon="pi pi-trash" severity="danger" label="Verwijderen" />
       </div>
       <div class="buttons-row">
-        <AppButton severity="ghost" variant="outlined" icon="pi pi-filter" aria-label="Filteren" />
-        <AppButton
+        <SwButton severity="ghost" variant="outlined" icon="pi pi-filter" aria-label="Filteren" />
+        <SwButton
           severity="ghost"
           variant="text"
           icon="pi pi-ellipsis-h"
@@ -184,33 +184,33 @@ const props: PropRow[] = [
         />
       </div>
       <div class="buttons-row items-end">
-        <AppButton rounded size="sm" icon="pi pi-plus" aria-label="Toevoegen" />
-        <AppButton rounded size="md" icon="pi pi-plus" aria-label="Toevoegen" />
-        <AppButton rounded size="lg" icon="pi pi-plus" aria-label="Toevoegen" />
-        <AppButton rounded severity="secondary" icon="pi pi-pencil" aria-label="Bewerken" />
-        <AppButton
+        <SwButton rounded size="sm" icon="pi pi-plus" aria-label="Toevoegen" />
+        <SwButton rounded size="md" icon="pi pi-plus" aria-label="Toevoegen" />
+        <SwButton rounded size="lg" icon="pi pi-plus" aria-label="Toevoegen" />
+        <SwButton rounded severity="secondary" icon="pi pi-pencil" aria-label="Bewerken" />
+        <SwButton
           rounded
           severity="ghost"
           variant="outlined"
           icon="pi pi-filter"
           aria-label="Filteren"
         />
-        <AppButton rounded severity="danger" icon="pi pi-trash" aria-label="Verwijderen" />
+        <SwButton rounded severity="danger" icon="pi pi-trash" aria-label="Verwijderen" />
       </div>
     </DemoBlock>
 
     <hr class="buttons-divider mt-2xl mb-xl" />
 
     <!-- Split button -->
-    <AppH3>Split knop</AppH3>
-    <AppSmall muted class="buttons-section-desc">
+    <SwH3>Split knop</SwH3>
+    <SwSmall muted class="buttons-section-desc">
       Geef <code class="buttons-code">menu-items</code> mee om automatisch een split knop te
       renderen — de hoofdactie staat links, gerelateerde acties in het dropdown menu.
-    </AppSmall>
+    </SwSmall>
 
     <DemoBlock>
       <div class="buttons-row">
-        <AppButton
+        <SwButton
           v-for="s in severities"
           :key="s.value"
           :severity="s.value"
@@ -224,20 +224,20 @@ const props: PropRow[] = [
     <hr class="buttons-divider mt-2xl mb-xl" />
 
     <!-- States -->
-    <AppH3>Staten</AppH3>
-    <AppSmall muted class="buttons-section-desc">
+    <SwH3>Staten</SwH3>
+    <SwSmall muted class="buttons-section-desc">
       Gebruik <code class="buttons-code">:loading="true"</code> bij asynchrone acties — de knop
       wordt automatisch uitgeschakeld en toont een spinner. Gebruik
       <code class="buttons-code">:disabled="true"</code> alleen als de reden duidelijk is voor de
       gebruiker.
-    </AppSmall>
+    </SwSmall>
 
     <DemoBlock>
       <div class="buttons-row">
-        <AppButton :loading="true" label="Opslaan" />
-        <AppButton :loading="true" severity="secondary" label="Laden" />
-        <AppButton :disabled="true" label="Uitgeschakeld" />
-        <AppButton :disabled="true" severity="ghost" variant="outlined" label="Uitgeschakeld" />
+        <SwButton :loading="true" label="Opslaan" />
+        <SwButton :loading="true" severity="secondary" label="Laden" />
+        <SwButton :disabled="true" label="Uitgeschakeld" />
+        <SwButton :disabled="true" severity="ghost" variant="outlined" label="Uitgeschakeld" />
       </div>
     </DemoBlock>
   </section>

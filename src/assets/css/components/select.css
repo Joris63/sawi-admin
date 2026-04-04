@@ -1,81 +1,81 @@
 /* ── Select field ───────────────────────────────────────────────────────────── */
 
-.app-select {
+.sw-select {
   @apply flex items-center justify-between w-full px-sm py-sm
          border border-border rounded-md bg-card text-foreground text-base
          cursor-pointer outline-none transition-colors duration-150;
 }
 
-.app-select:hover:not([data-disabled]):not(:focus) {
+.sw-select:hover:not([data-disabled]):not(:focus) {
   @apply border-border-strong;
 }
-.app-select:focus {
+.sw-select:focus {
   @apply border-primary-500 ring-2 ring-primary-500/15;
 }
-.app-select[data-disabled] {
+.sw-select[data-disabled] {
   @apply opacity-50 cursor-not-allowed bg-muted;
 }
-.app-select[data-invalid] {
+.sw-select[data-invalid] {
   @apply border-danger-500;
 }
-.app-select[data-invalid]:focus {
+.sw-select[data-invalid]:focus {
   @apply border-danger-500 ring-danger-500/15;
 }
 
-.app-select-label {
+.sw-select-label {
   @apply flex-1 text-base text-foreground truncate;
 }
 
-.app-select-label:empty::before {
+.sw-select-label:empty::before {
   content: attr(data-placeholder);
   @apply text-muted-foreground;
 }
 
-.app-select-dropdown {
+.sw-select-dropdown {
   @apply flex items-center shrink-0 ml-xs;
 }
 
-.app-select-chevron {
+.sw-select-chevron {
   @apply text-muted-foreground;
   font-size: 0.7rem;
 }
 
 /* ── Select overlay ─────────────────────────────────────────────────────────── */
 
-.app-select-overlay {
+.sw-select-overlay {
   @apply bg-card border border-border rounded-lg shadow-lg py-xs overflow-hidden mt-xs;
   min-width: 100%;
   z-index: 1000;
 }
 
-.app-select-list-wrap {
+.sw-select-list-wrap {
   @apply overflow-y-auto max-h-64;
 }
 
-.app-select-list {
+.sw-select-list {
   @apply m-0 p-0 list-none;
 }
 
-.app-select-option {
+.sw-select-option {
   @apply flex items-center gap-sm px-md py-sm text-base text-foreground
          cursor-pointer transition-colors duration-100;
 }
 
 /* Flag icon sizing when used inside select options */
-.app-select-option .fi,
-.app-country-option .fi {
+.sw-select-option .fi,
+.sw-country-option .fi {
   display: inline-block;
   width: 1.25rem;
   height: 0.9375rem;
   flex-shrink: 0;
 }
 
-.app-select-option:hover {
+.sw-select-option:hover {
   @apply bg-muted;
 }
-.app-select-option--selected {
+.sw-select-option--selected {
   @apply bg-primary-50 text-primary-700 dark:bg-primary-950 dark:text-primary-300;
 }
-.app-select-option--selected:hover {
+.sw-select-option--selected:hover {
   @apply bg-primary-100 dark:bg-primary-900;
 }

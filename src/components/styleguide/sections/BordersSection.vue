@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppH2, AppH3, AppBody, AppSmall, AppCaption } from '@/components/ui/typography'
+import { SwH2, SwH3, SwBody, SwSmall, SwCaption } from '@/components/ui/typography'
 import { useCopy } from '@/composables/useCopy'
 
 const { copied, copy } = useCopy()
@@ -41,23 +41,23 @@ const colorTokens = [
 
 <template>
   <section id="borders">
-    <AppH2>Randen</AppH2>
-    <AppBody muted class="borders-intro">
+    <SwH2>Randen</SwH2>
+    <SwBody muted class="borders-intro">
       Consistente hoekradius, breedte en kleur houden de interface samenhangend. Gebruik de tokens —
       geen losse waarden of arbitrary radius.
-    </AppBody>
+    </SwBody>
 
     <hr class="borders-divider mt-xl mb-xl" />
 
     <!-- Radius -->
-    <AppH3>Hoekradius</AppH3>
-    <AppSmall muted class="borders-section-desc">
+    <SwH3>Hoekradius</SwH3>
+    <SwSmall muted class="borders-section-desc">
       Klein en functioneel (<code class="borders-code">sm</code>–<code class="borders-code">md</code
       >) voor tags en inputs, container-niveau (<code class="borders-code">xl</code>–<code
         class="borders-code"
         >2xl</code
       >) voor kaarten en modals, <code class="borders-code">full</code> voor pills en avatars.
-    </AppSmall>
+    </SwSmall>
 
     <div class="radius-grid">
       <div
@@ -78,12 +78,12 @@ const colorTokens = [
     <hr class="borders-divider mt-2xl mb-xl" />
 
     <!-- Width -->
-    <AppH3>Breedte</AppH3>
-    <AppSmall muted class="borders-section-desc">
+    <SwH3>Breedte</SwH3>
+    <SwSmall muted class="borders-section-desc">
       <code class="borders-code">border</code> (1px) voor structuur en dividers,
       <code class="borders-code">border-md</code> voor focus en actieve states,
       <code class="borders-code">border-lg</code> voor geselecteerde items met nadruk.
-    </AppSmall>
+    </SwSmall>
 
     <div class="width-grid">
       <div
@@ -104,12 +104,12 @@ const colorTokens = [
     <hr class="borders-divider mt-2xl mb-xl" />
 
     <!-- Color -->
-    <AppH3>Kleur</AppH3>
-    <AppSmall muted class="borders-section-desc">
+    <SwH3>Kleur</SwH3>
+    <SwSmall muted class="borders-section-desc">
       Gebruik <code class="borders-code">border-border</code> als standaard en
       <code class="borders-code">border-border-strong</code> voor hover en focus. Alleen voor
       merkacties een directe paletkleur zoals <code class="borders-code">border-primary-800</code>.
-    </AppSmall>
+    </SwSmall>
 
     <div class="border-color-grid">
       <div
@@ -121,7 +121,7 @@ const colorTokens = [
         <div class="border-color-demo border-md" :class="token.class" />
         <div class="border-color-meta">
           <code class="border-color-name">{{ token.class }}</code>
-          <AppCaption class="border-color-desc">{{ token.desc }}</AppCaption>
+          <SwCaption class="border-color-desc">{{ token.desc }}</SwCaption>
         </div>
       </div>
     </div>

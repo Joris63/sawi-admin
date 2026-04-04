@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import AppButton from '@/components/ui/AppButton.vue'
+import SwButton from '@/components/ui/SwButton.vue'
 import logoRaw from '@/assets/images/logo.svg?raw'
 
 const isDark = ref(false)
@@ -19,7 +19,7 @@ function toggleDark() {
   <header class="sg-topbar">
     <span v-html="logoRaw" class="sg-topbar-logo" />
 
-    <AppButton
+    <SwButton
       severity="ghost"
       variant="text"
       rounded

@@ -2,8 +2,8 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import StyleguideTopbar from '@/components/styleguide/StyleguideTopbar.vue'
-import AppVerticalNav from '@/components/ui/AppVerticalNav.vue'
-import type { NavGroup } from '@/components/ui/AppVerticalNav.vue'
+import SwVerticalNav from '@/components/ui/SwVerticalNav.vue'
+import type { NavGroup } from '@/components/ui/SwVerticalNav.vue'
 import ColorsSection from '@/components/styleguide/sections/ColorsSection.vue'
 import TypographySection from '@/components/styleguide/sections/TypographySection.vue'
 import SpacingSection from '@/components/styleguide/sections/SpacingSection.vue'
@@ -66,7 +66,7 @@ function onSelect(id: string) {
 
     <div class="sg-body">
       <div class="sg-nav-pane">
-        <AppVerticalNav :groups="navGroups" :active-id="activeId" @select="onSelect" />
+        <SwVerticalNav :groups="navGroups" :active-id="activeId" @select="onSelect" />
       </div>
 
       <main class="sg-content">

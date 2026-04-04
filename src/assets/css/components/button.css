@@ -1,264 +1,264 @@
 /* ── AppButton ─────────────────────────────────────────────────────────────── */
 
-.app-btn {
+.sw-btn {
   @apply inline-flex items-center justify-center gap-xs font-medium border
          transition-colors cursor-pointer select-none outline-none whitespace-nowrap;
 }
 
-.app-btn:disabled {
+.sw-btn:disabled {
   @apply opacity-50 cursor-not-allowed pointer-events-none;
 }
 
 /* ── Sizes ─────────────────────────────────────────────────────────────────── */
 
-.app-btn--sm {
+.sw-btn--sm {
   @apply text-xs   px-sm py-xs rounded-md;
 }
-.app-btn--md {
+.sw-btn--md {
   @apply text-base px-md py-sm rounded-md;
 }
-.app-btn--lg {
+.sw-btn--lg {
   @apply text-lg  px-lg py-sm rounded-md;
 }
 
 /* ── PRIMARY ───────────────────────────────────────────────────────────────── */
 
-.app-btn--primary.app-btn--filled {
+.sw-btn--primary.sw-btn--filled {
   @apply bg-primary-800 border-primary-800 text-white;
   @apply dark:bg-primary-400 dark:border-primary-400 dark:text-primary-950;
 }
-.app-btn--primary.app-btn--filled:hover:not(:disabled) {
+.sw-btn--primary.sw-btn--filled:hover:not(:disabled) {
   @apply bg-primary-700 border-primary-700;
   @apply dark:bg-primary-300 dark:border-primary-300;
 }
-.app-btn--primary.app-btn--filled:active:not(:disabled) {
+.sw-btn--primary.sw-btn--filled:active:not(:disabled) {
   @apply bg-primary-900 border-primary-900;
   @apply dark:bg-primary-500 dark:border-primary-500;
 }
 
-.app-btn--primary.app-btn--outlined {
+.sw-btn--primary.sw-btn--outlined {
   @apply bg-transparent border-primary-800 text-primary-800;
   @apply dark:border-primary-400 dark:text-primary-400;
 }
-.app-btn--primary.app-btn--outlined:hover:not(:disabled) {
+.sw-btn--primary.sw-btn--outlined:hover:not(:disabled) {
   @apply bg-primary-50 dark:bg-primary-950;
 }
-.app-btn--primary.app-btn--outlined:active:not(:disabled) {
+.sw-btn--primary.sw-btn--outlined:active:not(:disabled) {
   @apply bg-primary-100 dark:bg-primary-900;
 }
 
-.app-btn--primary.app-btn--text {
+.sw-btn--primary.sw-btn--text {
   @apply bg-transparent border-transparent text-primary-800;
   @apply dark:text-primary-400;
 }
-.app-btn--primary.app-btn--text:hover:not(:disabled) {
+.sw-btn--primary.sw-btn--text:hover:not(:disabled) {
   @apply bg-primary-50 dark:bg-primary-950;
 }
-.app-btn--primary.app-btn--text:active:not(:disabled) {
+.sw-btn--primary.sw-btn--text:active:not(:disabled) {
   @apply bg-primary-100 dark:bg-primary-900;
 }
 
 /* ── SECONDARY ─────────────────────────────────────────────────────────────── */
 
-.app-btn--secondary.app-btn--filled {
+.sw-btn--secondary.sw-btn--filled {
   @apply bg-secondary-400 border-secondary-400 text-white;
   @apply dark:bg-secondary-300 dark:border-secondary-300 dark:text-secondary-950;
 }
-.app-btn--secondary.app-btn--filled:hover:not(:disabled) {
+.sw-btn--secondary.sw-btn--filled:hover:not(:disabled) {
   @apply bg-secondary-500 border-secondary-500;
   @apply dark:bg-secondary-200 dark:border-secondary-200;
 }
-.app-btn--secondary.app-btn--filled:active:not(:disabled) {
+.sw-btn--secondary.sw-btn--filled:active:not(:disabled) {
   @apply bg-secondary-600 border-secondary-600;
   @apply dark:bg-secondary-400 dark:border-secondary-400;
 }
 
-.app-btn--secondary.app-btn--outlined {
+.sw-btn--secondary.sw-btn--outlined {
   @apply bg-transparent border-secondary-400 text-secondary-600;
   @apply dark:border-secondary-300 dark:text-secondary-300;
 }
-.app-btn--secondary.app-btn--outlined:hover:not(:disabled) {
+.sw-btn--secondary.sw-btn--outlined:hover:not(:disabled) {
   @apply bg-secondary-50 dark:bg-secondary-950;
 }
-.app-btn--secondary.app-btn--outlined:active:not(:disabled) {
+.sw-btn--secondary.sw-btn--outlined:active:not(:disabled) {
   @apply bg-secondary-100 dark:bg-secondary-900;
 }
 
-.app-btn--secondary.app-btn--text {
+.sw-btn--secondary.sw-btn--text {
   @apply bg-transparent border-transparent text-secondary-600;
   @apply dark:text-secondary-300;
 }
-.app-btn--secondary.app-btn--text:hover:not(:disabled) {
+.sw-btn--secondary.sw-btn--text:hover:not(:disabled) {
   @apply bg-secondary-50 dark:bg-secondary-950;
 }
-.app-btn--secondary.app-btn--text:active:not(:disabled) {
+.sw-btn--secondary.sw-btn--text:active:not(:disabled) {
   @apply bg-secondary-100 dark:bg-secondary-900;
 }
 
 /* ── GHOST ─────────────────────────────────────────────────────────────────── */
 
-.app-btn--ghost.app-btn--filled {
+.sw-btn--ghost.sw-btn--filled {
   @apply bg-muted border-border text-foreground;
 }
-.app-btn--ghost.app-btn--filled:hover:not(:disabled) {
+.sw-btn--ghost.sw-btn--filled:hover:not(:disabled) {
   @apply bg-border border-border-strong;
 }
-.app-btn--ghost.app-btn--filled:active:not(:disabled) {
+.sw-btn--ghost.sw-btn--filled:active:not(:disabled) {
   @apply bg-border-strong border-border-strong;
 }
 
-.app-btn--ghost.app-btn--outlined {
+.sw-btn--ghost.sw-btn--outlined {
   @apply bg-transparent border-border text-foreground;
 }
-.app-btn--ghost.app-btn--outlined:hover:not(:disabled) {
+.sw-btn--ghost.sw-btn--outlined:hover:not(:disabled) {
   @apply bg-muted border-border;
 }
-.app-btn--ghost.app-btn--outlined:active:not(:disabled) {
+.sw-btn--ghost.sw-btn--outlined:active:not(:disabled) {
   @apply bg-border border-border-strong;
 }
 
-.app-btn--ghost.app-btn--text {
+.sw-btn--ghost.sw-btn--text {
   @apply bg-transparent border-transparent text-foreground;
 }
-.app-btn--ghost.app-btn--text:hover:not(:disabled) {
+.sw-btn--ghost.sw-btn--text:hover:not(:disabled) {
   @apply bg-muted;
 }
-.app-btn--ghost.app-btn--text:active:not(:disabled) {
+.sw-btn--ghost.sw-btn--text:active:not(:disabled) {
   @apply bg-border;
 }
 
 /* ── DANGER ────────────────────────────────────────────────────────────────── */
 
-.app-btn--danger.app-btn--filled {
+.sw-btn--danger.sw-btn--filled {
   @apply bg-danger-500 border-danger-500 text-white;
 }
-.app-btn--danger.app-btn--filled:hover:not(:disabled) {
+.sw-btn--danger.sw-btn--filled:hover:not(:disabled) {
   @apply bg-danger-600 border-danger-600;
 }
-.app-btn--danger.app-btn--filled:active:not(:disabled) {
+.sw-btn--danger.sw-btn--filled:active:not(:disabled) {
   @apply bg-danger-700 border-danger-700;
 }
 
-.app-btn--danger.app-btn--outlined {
+.sw-btn--danger.sw-btn--outlined {
   @apply bg-transparent border-danger-500 text-danger-600;
   @apply dark:border-danger-400 dark:text-danger-400;
 }
-.app-btn--danger.app-btn--outlined:hover:not(:disabled) {
+.sw-btn--danger.sw-btn--outlined:hover:not(:disabled) {
   @apply bg-danger-50 dark:bg-danger-950;
 }
-.app-btn--danger.app-btn--outlined:active:not(:disabled) {
+.sw-btn--danger.sw-btn--outlined:active:not(:disabled) {
   @apply bg-danger-100 dark:bg-danger-900;
 }
 
-.app-btn--danger.app-btn--text {
+.sw-btn--danger.sw-btn--text {
   @apply bg-transparent border-transparent text-danger-600;
   @apply dark:text-danger-400;
 }
-.app-btn--danger.app-btn--text:hover:not(:disabled) {
+.sw-btn--danger.sw-btn--text:hover:not(:disabled) {
   @apply bg-danger-50 dark:bg-danger-950;
 }
-.app-btn--danger.app-btn--text:active:not(:disabled) {
+.sw-btn--danger.sw-btn--text:active:not(:disabled) {
   @apply bg-danger-100 dark:bg-danger-900;
 }
 
 /* ── Split button ──────────────────────────────────────────────────────────── */
 
-.app-splitbtn {
+.sw-splitbtn {
   @apply flex;
 }
 
-.app-splitbtn-main {
+.sw-splitbtn-main {
   @apply rounded-r-none border-r-0;
 }
-.app-splitbtn-dropdown {
+.sw-splitbtn-dropdown {
   @apply rounded-l-none;
 }
-.app-splitbtn-dropdown.app-btn--sm {
+.sw-splitbtn-dropdown.sw-btn--sm {
   @apply px-xs;
 }
-.app-splitbtn-dropdown.app-btn--md {
+.sw-splitbtn-dropdown.sw-btn--md {
   @apply px-sm;
 }
-.app-splitbtn-dropdown.app-btn--lg {
+.sw-splitbtn-dropdown.sw-btn--lg {
   @apply px-sm;
 }
 
 /* Separator: filled buttons need explicit separator since border = bg color */
-.app-btn--primary.app-btn--filled.app-splitbtn-dropdown,
-.app-btn--secondary.app-btn--filled.app-splitbtn-dropdown,
-.app-btn--danger.app-btn--filled.app-splitbtn-dropdown {
+.sw-btn--primary.sw-btn--filled.sw-splitbtn-dropdown,
+.sw-btn--secondary.sw-btn--filled.sw-splitbtn-dropdown,
+.sw-btn--danger.sw-btn--filled.sw-splitbtn-dropdown {
   @apply border-l-white/25;
 }
-.app-btn--ghost.app-btn--filled.app-splitbtn-dropdown {
+.sw-btn--ghost.sw-btn--filled.sw-splitbtn-dropdown {
   @apply border-l-border-strong;
 }
 
 /* Dark mode: primary-400/secondary-300 are light so white/25 still fine;
    danger-500 is dark enough that white/25 works too. Ghost needs stronger contrast. */
-.dark .app-btn--ghost.app-btn--filled.app-splitbtn-dropdown {
+.dark .sw-btn--ghost.sw-btn--filled.sw-splitbtn-dropdown {
   @apply border-l-border;
 }
-/* outlined/text: natural border-l from .app-btn already acts as separator */
+/* outlined/text: natural border-l from .sw-btn already acts as separator */
 
 /* Menu panel */
-.app-splitbtn-menu {
+.sw-splitbtn-menu {
   @apply absolute bg-card border border-border rounded-lg shadow-md py-xs min-w-[10rem] z-50 mt-xs;
 }
-.app-splitbtn-list {
+.sw-splitbtn-list {
   @apply list-none m-0 p-0;
 }
-.app-splitbtn-item-link {
+.sw-splitbtn-item-link {
   @apply flex items-center gap-sm px-md py-sm text-base text-foreground cursor-pointer
          transition-colors rounded-md mx-xs;
 }
-.app-splitbtn-item-link:hover {
+.sw-splitbtn-item-link:hover {
   @apply bg-muted;
 }
-.app-splitbtn-item-icon {
+.sw-splitbtn-item-icon {
   font-size: 1em;
   line-height: 1;
   @apply text-muted-foreground;
 }
-.app-splitbtn-item-label {
+.sw-splitbtn-item-label {
   @apply flex-1 whitespace-nowrap;
 }
-.app-splitbtn-separator {
+.sw-splitbtn-separator {
   @apply border-b border-border my-xs mx-md;
 }
 
 /* ── Icon-only (square) ────────────────────────────────────────────────────── */
 
-.app-btn--icon-only {
+.sw-btn--icon-only {
   @apply p-0;
 }
-.app-btn--icon-only.app-btn--sm {
+.sw-btn--icon-only.sw-btn--sm {
   @apply size-icon-sm;
 }
-.app-btn--icon-only.app-btn--md {
+.sw-btn--icon-only.sw-btn--md {
   @apply size-icon-md;
 }
-.app-btn--icon-only.app-btn--lg {
+.sw-btn--icon-only.sw-btn--lg {
   @apply size-icon-lg;
 }
 
 /* ── Rounded icon-only ─────────────────────────────────────────────────────── */
 
-.app-btn--rounded {
+.sw-btn--rounded {
   @apply p-0 rounded-full;
 }
-.app-btn--rounded.app-btn--sm {
+.sw-btn--rounded.sw-btn--sm {
   @apply size-icon-sm;
 }
-.app-btn--rounded.app-btn--md {
+.sw-btn--rounded.sw-btn--md {
   @apply size-icon-md;
 }
-.app-btn--rounded.app-btn--lg {
+.sw-btn--rounded.sw-btn--lg {
   @apply size-icon-lg;
 }
 
 /* ── Icon ──────────────────────────────────────────────────────────────────── */
 
-.app-btn-icon {
+.sw-btn-icon {
   font-size: 1em;
   line-height: 1;
 }

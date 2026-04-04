@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { AppH2, AppH3, AppBody, AppSmall } from '@/components/ui/typography'
-import AppButton from '@/components/ui/AppButton.vue'
+import { SwH2, SwH3, SwBody, SwSmall } from '@/components/ui/typography'
+import SwButton from '@/components/ui/SwButton.vue'
 import { useCopy } from '@/composables/useCopy'
 
 const { copied, copy } = useCopy()
@@ -28,17 +28,17 @@ const tokens = [
 
 <template>
   <section id="spacing">
-    <AppH2>Spatiëring</AppH2>
-    <AppBody muted class="spacing-intro">
+    <SwH2>Spatiëring</SwH2>
+    <SwBody muted class="spacing-intro">
       Zeven benoemde tokens voor alle witruimte in de interface. Gebruik altijd een token — geen
       arbitrary waarden zoals <code class="spacing-code">p-[18px]</code>.
-    </AppBody>
+    </SwBody>
 
     <!-- Prefix switcher -->
     <div class="spacing-prefix-switcher mt-lg">
       <template v-for="(group, i) in prefixGroups" :key="i">
         <div v-if="i > 0" class="spacing-prefix-divider" />
-        <AppButton
+        <SwButton
           v-for="p in group"
           :key="p"
           :severity="selectedPrefix === p ? 'primary' : 'ghost'"
@@ -52,13 +52,13 @@ const tokens = [
     </div>
 
     <!-- Token scale -->
-    <AppH3>Tokens</AppH3>
-    <AppSmall muted class="spacing-section-desc">
+    <SwH3>Tokens</SwH3>
+    <SwSmall muted class="spacing-section-desc">
       <code class="spacing-code">md</code> (16px) is de basiseenheid. Gebruik
       <code class="spacing-code">xs</code>–<code class="spacing-code">sm</code> voor compacte
       UI-elementen, <code class="spacing-code">lg</code>–<code class="spacing-code">3xl</code> voor
       layout en sectieafstand.
-    </AppSmall>
+    </SwSmall>
 
     <div class="spacing-scale">
       <div
